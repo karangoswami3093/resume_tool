@@ -20,9 +20,9 @@ function mergeResumes(api: SavedResume[], local: LocalResume[]): SavedResume[] {
 }
 
 function getScoreBg(score: number) {
-  if (score >= 80) return "from-[#647FBC] to-[#91ADC8]";
-  if (score >= 60) return "from-[#91ADC8] to-[#AED6CF]";
-  if (score >= 40) return "from-[#AED6CF] to-[#1e2a5e]";
+  if (score >= 80) return "from-[#C8E83C] to-[#7ECBC4]";
+  if (score >= 60) return "from-[#1E5C40] to-[#7ECBC4]";
+  if (score >= 40) return "from-[#3A7A62] to-[#7ECBC4]";
   return "from-red-500 to-red-700";
 }
 
@@ -44,29 +44,29 @@ export default function HistoryPage() {
     : null;
 
   return (
-    <div className="h-screen overflow-y-auto bg-[#FAFDD6] dark:bg-[#1e2a5e]">
+    <div className="h-screen overflow-y-auto bg-[#F0EBD8]">
     <div className="max-w-4xl mx-auto px-6 py-10">
 
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Optimization History</h1>
-        <p className="text-sm text-slate-500 dark:text-white/40 mt-1">
+        <h1 className="text-2xl font-bold text-slate-900">Optimization History</h1>
+        <p className="text-sm text-slate-500 mt-1">
           Track your resume ATS score improvements over time
         </p>
       </div>
 
       {/* Summary bar */}
       {resumes.length > 0 && (
-        <div className="flex items-center gap-6 mb-8 p-4 bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl shadow-sm">
+        <div className="flex items-center gap-6 mb-8 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
           <div className="flex items-center gap-2 text-sm">
-            <Clock className="w-4 h-4 text-slate-400 dark:text-white/30" />
-            <span className="text-slate-500 dark:text-white/40">{resumes.length} optimization{resumes.length > 1 ? "s" : ""}</span>
+            <Clock className="w-4 h-4 text-slate-400" />
+            <span className="text-slate-500">{resumes.length} optimization{resumes.length > 1 ? "s" : ""}</span>
           </div>
           {bestScore != null && (
             <div className="flex items-center gap-2 text-sm">
-              <TrendingUp className="w-4 h-4 text-[#AED6CF]" />
-              <span className="text-slate-500 dark:text-white/40">Best score: </span>
-              <span className="font-bold text-[#AED6CF] dark:text-[#AED6CF]">{bestScore}/100</span>
+              <TrendingUp className="w-4 h-4 text-[#3A7A62]" />
+              <span className="text-slate-500">Best score: </span>
+              <span className="font-bold text-[#3A7A62]">{bestScore}/100</span>
             </div>
           )}
         </div>
@@ -74,17 +74,17 @@ export default function HistoryPage() {
 
       {isLoading ? (
         <div className="flex justify-center py-20">
-          <Loader2 className="w-6 h-6 text-slate-400 dark:text-white/30 animate-spin" />
+          <Loader2 className="w-6 h-6 text-slate-400 animate-spin" />
         </div>
       ) : resumes.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-24 gap-4">
-          <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-[#AED6CF]/15 flex items-center justify-center">
-            <TrendingUp className="w-7 h-7 text-slate-300 dark:text-white/20" />
+          <div className="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center">
+            <TrendingUp className="w-7 h-7 text-slate-300" />
           </div>
-          <p className="text-slate-500 dark:text-white/40 text-sm font-medium">No optimization history yet</p>
+          <p className="text-slate-500 text-sm font-medium">No optimization history yet</p>
           <Link
             href="/builder"
-            className="text-sm text-[#91ADC8] dark:text-[#647FBC] hover:text-[#91ADC8] dark:hover:text-[#647FBC] font-semibold transition-colors"
+            className="text-sm text-[#7ECBC4] hover:text-[#7ECBC4] font-semibold transition-colors"
           >
             Start optimizing your resume
           </Link>
@@ -97,12 +97,12 @@ export default function HistoryPage() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
-              className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm hover:border-[#91ADC8]/40 dark:hover:border-[#647FBC]/20 hover:shadow-md transition-all"
+              className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-[#7ECBC4]/40 hover:shadow-md transition-all"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1 min-w-0 pr-4">
-                  <h3 className="font-semibold text-slate-900 dark:text-white truncate">{resume.title}</h3>
-                  <div className="flex items-center gap-2 mt-1.5 text-xs text-slate-400 dark:text-white/30">
+                  <h3 className="font-semibold text-slate-900 truncate">{resume.title}</h3>
+                  <div className="flex items-center gap-2 mt-1.5 text-xs text-slate-400">
                     <Calendar className="w-3 h-3" />
                     <span>
                       {new Date(resume.createdAt).toLocaleDateString("en-US", {
@@ -110,7 +110,7 @@ export default function HistoryPage() {
                       })}
                     </span>
                     {resume.isOptimized && (
-                      <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-[#647FBC]/10 dark:bg-[#647FBC]/10 text-[#91ADC8] dark:text-[#647FBC] rounded-full text-[10px] font-semibold">
+                      <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-[#1E5C40]/10 text-[#7ECBC4] rounded-full text-[10px] font-semibold">
                         <Sparkles className="w-2.5 h-2.5" />
                         AI
                       </span>
@@ -122,13 +122,13 @@ export default function HistoryPage() {
                   <div className="flex items-center gap-3 shrink-0">
                     <div className="text-right">
                       <div className="flex items-center gap-1.5 justify-end">
-                        <Target className="w-3.5 h-3.5 text-slate-400 dark:text-white/20" />
+                        <Target className="w-3.5 h-3.5 text-slate-400" />
                         <span className={`text-2xl font-bold ${scoreColor(resume.atsScore)}`}>
                           {resume.atsScore}
                         </span>
-                        <span className="text-sm text-slate-400 dark:text-white/30">/100</span>
+                        <span className="text-sm text-slate-400">/100</span>
                       </div>
-                      <p className="text-xs text-slate-400 dark:text-white/30 text-right">{scoreLabel(resume.atsScore)}</p>
+                      <p className="text-xs text-slate-400 text-right">{scoreLabel(resume.atsScore)}</p>
                     </div>
                   </div>
                 )}
@@ -136,7 +136,7 @@ export default function HistoryPage() {
 
               {resume.atsScore != null && (
                 <div className="mb-4">
-                  <div className="h-2 bg-slate-100 dark:bg-[#AED6CF]/20 rounded-full overflow-hidden">
+                  <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
                     <motion.div
                       className={`h-full rounded-full bg-gradient-to-r ${getScoreBg(resume.atsScore)}`}
                       initial={{ width: 0 }}
@@ -148,14 +148,14 @@ export default function HistoryPage() {
               )}
 
               <div className="flex items-center justify-between">
-                <div className="text-xs text-slate-400 dark:text-white/30">
+                <div className="text-xs text-slate-400">
                   {resume.keywordMatch != null && (
-                    <span>Keyword match: <span className="font-semibold text-slate-600 dark:text-white/50">{Math.round(resume.keywordMatch)}%</span></span>
+                    <span>Keyword match: <span className="font-semibold text-slate-600">{Math.round(resume.keywordMatch)}%</span></span>
                   )}
                 </div>
                 <Link
                   href={`/builder?id=${resume.id}`}
-                  className="text-xs font-semibold text-[#91ADC8] dark:text-[#647FBC] hover:text-[#91ADC8] dark:hover:text-[#647FBC] transition-colors"
+                  className="text-xs font-semibold text-[#7ECBC4] hover:text-[#7ECBC4] transition-colors"
                 >
                   Open in Builder
                 </Link>

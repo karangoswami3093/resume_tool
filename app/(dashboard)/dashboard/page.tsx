@@ -42,9 +42,11 @@ function CountUp({ to, duration = 900 }: { to: number; duration?: number }) {
   return <>{val}</>;
 }
 
-const PRIMARY   = "#647FBC";
-const SECONDARY = "#91ADC8";
-const SOFT      = "#AED6CF";
+const PRIMARY   = "#1E5C40";
+const SECONDARY = "#7ECBC4";
+const SOFT      = "#3A7A62";
+const LIME      = "#C8E83C";
+const SACRAMENTO = "#0D3B2C";
 
 function Badge({ value }: { value: number }) {
   const pos = value >= 0;
@@ -136,27 +138,27 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="h-screen overflow-y-auto bg-[#FAFDD6] dark:bg-[#1e2a5e]">
+    <div className="h-screen overflow-y-auto bg-[#F0EBD8]">
       <div className="max-w-7xl mx-auto px-6 py-6 space-y-5">
 
         {/* ── Header ── */}
         <div className="flex items-center justify-between">
-          <h1 className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">Dashboard</h1>
+          <h1 className="text-xl font-bold text-gray-900 tracking-tight">Dashboard</h1>
           <div className="flex items-center gap-2">
-            <button className="w-8 h-8 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
+            <button className="w-8 h-8 rounded-lg border border-gray-200 bg-white flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
               <Bell className="w-3.5 h-3.5" />
             </button>
-            <button className="w-8 h-8 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
+            <button className="w-8 h-8 rounded-lg border border-gray-200 bg-white flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors">
               <MessageSquare className="w-3.5 h-3.5" />
             </button>
-            <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-xs font-medium text-gray-600 dark:text-white/70 hover:border-gray-300 transition-colors">
+            <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 bg-white text-xs font-medium text-gray-600 hover:border-gray-300 transition-colors">
               <LayoutGrid className="w-3.5 h-3.5" />
               Custom Widget
             </button>
             <Link
               href="/builder"
-              className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-semibold text-white transition-all hover:opacity-90"
-              style={{ background: PRIMARY }}
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-semibold transition-all hover:opacity-90"
+              style={{ background: LIME, color: SACRAMENTO }}
             >
               <Zap className="w-3.5 h-3.5" />
               + Optimize Resume
@@ -172,8 +174,8 @@ export default function DashboardPage() {
               onClick={() => setPeriod(opt)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-medium transition-colors
                 ${period === opt
-                  ? "border-[#647FBC] bg-[#647FBC]/10 text-[#647FBC]"
-                  : "border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-gray-500 dark:text-white/50 hover:border-gray-300"}`}
+                  ? "border-[#1E5C40] bg-[#1E5C40]/10 text-[#1E5C40]"
+                  : "border-gray-200 bg-white text-gray-500 hover:border-gray-300"}`}
             >
               {opt === "Jan - Dec 2025" && <Calendar className="w-3 h-3" />}
               {opt}
@@ -209,16 +211,16 @@ export default function DashboardPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.07 }}
-              className="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl p-5 shadow-sm"
+              className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm"
             >
               <div className="flex items-center justify-between mb-3">
-                <span className="text-sm text-gray-500 dark:text-white/50 font-medium">{card.label}</span>
-                <Info className="w-3.5 h-3.5 text-gray-300 dark:text-white/20" />
+                <span className="text-sm text-gray-500 font-medium">{card.label}</span>
+                <Info className="w-3.5 h-3.5 text-gray-300" />
               </div>
-              <p className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight mb-3">
+              <p className="text-3xl font-bold text-gray-900 tracking-tight mb-3">
                 {loading ? <Loader2 className="w-6 h-6 animate-spin text-gray-300" /> : <CountUp to={card.value} />}
               </p>
-              <div className="flex items-center gap-2 text-xs text-gray-400 dark:text-white/30">
+              <div className="flex items-center gap-2 text-xs text-gray-400">
                 <span>{card.sub}</span>
                 {card.pct > 0 && <Badge value={card.pct} />}
                 <Link href="/history" className="ml-auto flex items-center gap-0.5 font-semibold hover:underline" style={{ color: PRIMARY }}>
@@ -234,19 +236,19 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25 }}
-          className="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl shadow-sm overflow-hidden"
+          className="bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden"
         >
           {/* Section header */}
-          <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-gray-50 dark:border-white/5">
+          <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-gray-50">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-gray-900 dark:text-white text-sm">Statistics</span>
-              <Info className="w-3.5 h-3.5 text-gray-300 dark:text-white/20" />
+              <span className="font-semibold text-gray-900 text-sm">Statistics</span>
+              <Info className="w-3.5 h-3.5 text-gray-300" />
             </div>
             <div className="flex items-center gap-1.5">
               <button
                 onClick={() => setChartMode("bar")}
                 className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium transition-colors
-                  ${chartMode === "bar" ? "text-white" : "border border-gray-200 dark:border-white/10 text-gray-500 dark:text-white/50"}`}
+                  ${chartMode === "bar" ? "text-white" : "border border-gray-200 text-gray-500"}`}
                 style={chartMode === "bar" ? { background: PRIMARY } : {}}
               >
                 <BarChart2 className="w-3.5 h-3.5" /> Bar
@@ -254,7 +256,7 @@ export default function DashboardPage() {
               <button
                 onClick={() => setChartMode("line")}
                 className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium transition-colors
-                  ${chartMode === "line" ? "text-white" : "border border-gray-200 dark:border-white/10 text-gray-500 dark:text-white/50"}`}
+                  ${chartMode === "line" ? "text-white" : "border border-gray-200 text-gray-500"}`}
                 style={chartMode === "line" ? { background: PRIMARY } : {}}
               >
                 <TrendingUp className="w-3.5 h-3.5" /> Line
@@ -263,7 +265,7 @@ export default function DashboardPage() {
           </div>
 
           {/* 4 mini metrics */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-gray-50 dark:divide-white/5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-gray-50">
             {[
               { dot: PRIMARY,    label: "Avg ATS Score",   val: `${avgScore}`,    pct: avgScore > 0 ? 3.4 : 0 },
               { dot: SECONDARY,  label: "Keyword Match",   val: `${avgKeyword}%`, pct: avgKeyword > 0 ? 2.5 : 0 },
@@ -273,11 +275,11 @@ export default function DashboardPage() {
               <div key={m.label} className="px-5 py-4">
                 <div className="flex items-center gap-1.5 mb-1">
                   <span className="w-2 h-2 rounded-full shrink-0" style={{ background: m.dot }} />
-                  <span className="text-xs text-gray-400 dark:text-white/40">{m.label}</span>
-                  <Info className="w-3 h-3 text-gray-200 dark:text-white/15 ml-0.5" />
+                  <span className="text-xs text-gray-400">{m.label}</span>
+                  <Info className="w-3 h-3 text-gray-200 ml-0.5" />
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-xl font-bold text-gray-900 dark:text-white">{m.val}</span>
+                  <span className="text-xl font-bold text-gray-900">{m.val}</span>
                   {m.pct > 0 && <Badge value={m.pct} />}
                 </div>
               </div>
@@ -292,7 +294,7 @@ export default function DashboardPage() {
               </div>
             ) : lineData.length === 0 ? (
               <div className="h-52 flex items-center justify-center">
-                <p className="text-sm text-gray-300 dark:text-white/20">No data yet — optimize your first resume</p>
+                <p className="text-sm text-gray-300">No data yet — optimize your first resume</p>
               </div>
             ) : (
               <ResponsiveContainer width="100%" height={200}>
@@ -319,7 +321,7 @@ export default function DashboardPage() {
             )}
           </div>
 
-          <div className="px-5 pb-4 flex items-center gap-1 text-xs text-gray-400 dark:text-white/30">
+          <div className="px-5 pb-4 flex items-center gap-1 text-xs text-gray-400">
             Learn more about{" "}
             <Link href="/history" className="font-semibold flex items-center gap-0.5" style={{ color: PRIMARY }}>
               Statistics <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9L9 3M9 3H5M9 3v4"/></svg>
@@ -335,12 +337,12 @@ export default function DashboardPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35 }}
-            className="lg:col-span-2 bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl p-5 shadow-sm"
+            className="lg:col-span-2 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm"
           >
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-2">
-                <span className="font-semibold text-gray-900 dark:text-white text-sm">Distribution</span>
-                <Info className="w-3.5 h-3.5 text-gray-300 dark:text-white/20" />
+                <span className="font-semibold text-gray-900 text-sm">Distribution</span>
+                <Info className="w-3.5 h-3.5 text-gray-300" />
               </div>
               <Link href="/history" className="text-xs font-semibold flex items-center gap-1" style={{ color: PRIMARY }}>
                 Learn more about Distribution
@@ -354,10 +356,10 @@ export default function DashboardPage() {
                 <div>
                   <div className="flex items-center gap-1.5 mb-1">
                     <span className="w-2 h-2 rounded-full" style={{ background: PRIMARY }} />
-                    <span className="text-xs text-gray-400 dark:text-white/40">Excellent resumes</span>
-                    <Info className="w-3 h-3 text-gray-200 dark:text-white/15" />
+                    <span className="text-xs text-gray-400">Excellent resumes</span>
+                    <Info className="w-3 h-3 text-gray-200" />
                   </div>
-                  <p className="text-3xl font-bold text-gray-900 dark:text-white">
+                  <p className="text-3xl font-bold text-gray-900">
                     {scored.length > 0
                       ? `${Math.round((scored.filter(r => (r.atsScore||0) >= 80).length / scored.length) * 100)}%`
                       : "—"}
@@ -366,10 +368,10 @@ export default function DashboardPage() {
                 <div>
                   <div className="flex items-center gap-1.5 mb-1">
                     <span className="w-2 h-2 rounded-full bg-red-400" />
-                    <span className="text-xs text-gray-400 dark:text-white/40">Low score rate</span>
-                    <Info className="w-3 h-3 text-gray-200 dark:text-white/15" />
+                    <span className="text-xs text-gray-400">Low score rate</span>
+                    <Info className="w-3 h-3 text-gray-200" />
                   </div>
-                  <p className="text-3xl font-bold text-gray-900 dark:text-white">
+                  <p className="text-3xl font-bold text-gray-900">
                     {scored.length > 0
                       ? `${Math.round((scored.filter(r => (r.atsScore||0) < 40).length / scored.length) * 100)}%`
                       : "—"}
@@ -385,10 +387,10 @@ export default function DashboardPage() {
                   return (
                     <div key={d.label}>
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-xs text-gray-500 dark:text-white/50 font-medium">{d.label}</span>
-                        <span className="text-xs font-bold text-gray-700 dark:text-white/70">{d.count}</span>
+                        <span className="text-xs text-gray-500 font-medium">{d.label}</span>
+                        <span className="text-xs font-bold text-gray-700">{d.count}</span>
                       </div>
-                      <div className="h-2 bg-gray-100 dark:bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                         <motion.div
                           className="h-full rounded-full"
                           style={{ background: colors[i] }}
@@ -400,7 +402,7 @@ export default function DashboardPage() {
                     </div>
                   );
                 })}
-                <div className="flex justify-between text-[10px] text-gray-300 dark:text-white/20 mt-1">
+                <div className="flex justify-between text-[10px] text-gray-300 mt-1">
                   <span>0</span><span>100%</span>
                 </div>
               </div>
@@ -412,20 +414,20 @@ export default function DashboardPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.42 }}
-            className="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl p-5 shadow-sm flex flex-col"
+            className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm flex flex-col"
           >
             {/* Icon */}
             <div className="flex justify-center mb-4">
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg"
-                style={{ background: `linear-gradient(135deg, ${PRIMARY}, ${SECONDARY})` }}>
-                <Sparkles className="w-7 h-7 text-white" />
+                style={{ background: `linear-gradient(135deg, ${SACRAMENTO}, ${PRIMARY})` }}>
+                <Sparkles className="w-7 h-7" style={{ color: LIME }} />
               </div>
             </div>
 
-            <h3 className="text-center font-bold text-gray-900 dark:text-white mb-1.5 text-sm">
+            <h3 className="text-center font-bold text-gray-900 mb-1.5 text-sm">
               Optimize Smarter with AI!
             </h3>
-            <p className="text-center text-xs text-gray-400 dark:text-white/40 leading-relaxed mb-5">
+            <p className="text-center text-xs text-gray-400 leading-relaxed mb-5">
               Analyze your resume data in real time, highlighting patterns and predicting ATS outcomes.
             </p>
 
@@ -439,14 +441,14 @@ export default function DashboardPage() {
                 >
                   <Link
                     href="/builder"
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group"
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors group"
                   >
                     <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
                       style={{ background: `${PRIMARY}15` }}>
                       <tip.icon className="w-3.5 h-3.5" style={{ color: PRIMARY }} />
                     </div>
-                    <span className="text-xs text-gray-600 dark:text-white/60 flex-1 leading-snug">{tip.text}</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-gray-300 dark:text-white/20 group-hover:text-gray-500 transition-colors shrink-0" />
+                    <span className="text-xs text-gray-600 flex-1 leading-snug">{tip.text}</span>
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-gray-500 transition-colors shrink-0" />
                   </Link>
                 </motion.div>
               ))}
@@ -454,8 +456,8 @@ export default function DashboardPage() {
 
             <Link
               href="/builder"
-              className="mt-4 w-full py-2.5 rounded-xl text-xs font-semibold text-white text-center transition-opacity hover:opacity-90"
-              style={{ background: PRIMARY }}
+              className="mt-4 w-full py-2.5 rounded-xl text-xs font-semibold text-center transition-opacity hover:opacity-90"
+              style={{ background: LIME, color: SACRAMENTO }}
             >
               Start Optimizing →
             </Link>
@@ -468,17 +470,17 @@ export default function DashboardPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl shadow-sm overflow-hidden"
+            className="bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden"
           >
-            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-50 dark:border-white/5">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-50">
               <div className="flex items-center gap-2">
-                <FileText className="w-4 h-4 text-gray-400 dark:text-white/30" />
-                <span className="font-semibold text-gray-900 dark:text-white text-sm">Recent Resumes</span>
+                <FileText className="w-4 h-4 text-gray-400" />
+                <span className="font-semibold text-gray-900 text-sm">Recent Resumes</span>
               </div>
               <Link href="/history" className="text-xs font-semibold" style={{ color: PRIMARY }}>View all</Link>
             </div>
             {/* Table header */}
-            <div className="grid grid-cols-12 gap-4 px-5 py-2.5 bg-gray-50 dark:bg-white/5 text-[10px] font-semibold text-gray-400 dark:text-white/25 uppercase tracking-wider">
+            <div className="grid grid-cols-12 gap-4 px-5 py-2.5 bg-gray-50 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
               <div className="col-span-5">Title</div>
               <div className="col-span-2">Date</div>
               <div className="col-span-2">ATS Score</div>
@@ -491,7 +493,7 @@ export default function DashboardPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.55 + i * 0.04 }}
-                className="grid grid-cols-12 gap-4 items-center px-5 py-3 border-b border-gray-50 dark:border-white/5 last:border-0 hover:bg-gray-50/60 dark:hover:bg-white/5 transition-colors group"
+                className="grid grid-cols-12 gap-4 items-center px-5 py-3 border-b border-gray-50 last:border-0 hover:bg-gray-50/60 transition-colors group"
               >
                 <div className="col-span-5 flex items-center gap-2.5">
                   <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
@@ -499,7 +501,7 @@ export default function DashboardPage() {
                     <FileText className="w-3.5 h-3.5" style={{ color: PRIMARY }} />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs font-semibold text-gray-800 dark:text-white truncate">{r.title}</p>
+                    <p className="text-xs font-semibold text-gray-800 truncate">{r.title}</p>
                     {r.isOptimized && (
                       <span className="inline-flex items-center gap-0.5 text-[10px] font-semibold" style={{ color: PRIMARY }}>
                         <Sparkles className="w-2.5 h-2.5" /> AI Optimized
@@ -507,24 +509,24 @@ export default function DashboardPage() {
                     )}
                   </div>
                 </div>
-                <div className="col-span-2 text-xs text-gray-400 dark:text-white/30">
+                <div className="col-span-2 text-xs text-gray-400">
                   {new Date(r.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
                 </div>
                 <div className="col-span-2">
                   {r.atsScore != null ? (
                     <span className="text-xs font-bold" style={{
                       color: r.atsScore >= 80 ? PRIMARY : r.atsScore >= 60 ? SECONDARY : r.atsScore >= 40 ? SOFT : "#f87171"
-                    }}>{r.atsScore}<span className="text-gray-300 dark:text-white/20 font-normal">/100</span></span>
-                  ) : <span className="text-gray-300 dark:text-white/20 text-xs">—</span>}
+                    }}>{r.atsScore}<span className="text-gray-300 font-normal">/100</span></span>
+                  ) : <span className="text-gray-300 text-xs">—</span>}
                 </div>
                 <div className="col-span-2">
                   {(r as any).keywordMatch != null ? (
-                    <span className="text-xs font-medium text-gray-500 dark:text-white/40">{Math.round((r as any).keywordMatch)}%</span>
-                  ) : <span className="text-gray-300 dark:text-white/20 text-xs">—</span>}
+                    <span className="text-xs font-medium text-gray-500">{Math.round((r as any).keywordMatch)}%</span>
+                  ) : <span className="text-gray-300 text-xs">—</span>}
                 </div>
                 <div className="col-span-1 flex items-center justify-end gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
                   <Link href={`/builder?id=${r.id}`}
-                    className="p-1 rounded-lg text-gray-400 hover:text-gray-700 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
+                    className="p-1 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors">
                     <Target className="w-3.5 h-3.5" />
                   </Link>
                   <button onClick={() => handleDelete(r.id)}

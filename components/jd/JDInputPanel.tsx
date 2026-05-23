@@ -21,15 +21,15 @@ export default function JDInputPanel({ value, onChange, jdAnalysis }: JDInputPan
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="Paste the full job description here...&#10;&#10;Include requirements, responsibilities, and preferred qualifications for best results."
-          className="w-full h-40 px-3 py-2.5 bg-slate-50 dark:bg-[#AED6CF]/10 border border-slate-200 dark:border-[#AED6CF]/30 rounded-xl text-sm text-slate-800 dark:text-white/80 placeholder-slate-300 dark:placeholder-white/20 resize-none focus:outline-none focus:border-[#91ADC8] dark:focus:border-[#647FBC]/50 transition-colors"
+          className="w-full h-40 px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 placeholder-slate-300 resize-none focus:outline-none focus:border-[#7ECBC4] transition-colors"
         />
-        <div className="absolute bottom-2.5 right-3 text-xs text-slate-300 dark:text-white/20">
+        <div className="absolute bottom-2.5 right-3 text-xs text-slate-300">
           {value.length} chars
         </div>
       </div>
 
       {value.length > 100 && (
-        <div className="flex items-center gap-2 text-xs text-slate-400 dark:text-white/40">
+        <div className="flex items-center gap-2 text-xs text-slate-400">
           <Briefcase className="w-3.5 h-3.5" />
           <span>
             {value.length > 500
@@ -40,19 +40,19 @@ export default function JDInputPanel({ value, onChange, jdAnalysis }: JDInputPan
       )}
 
       {jdAnalysis && (
-        <div className="rounded-xl border border-slate-200 dark:border-[#AED6CF]/30 bg-slate-50 dark:bg-[#AED6CF]/10 overflow-hidden">
+        <div className="rounded-xl border border-slate-200 bg-slate-50 overflow-hidden">
           <button
             onClick={() => setShowAnalysis(!showAnalysis)}
-            className="w-full flex items-center justify-between px-3 py-2.5 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
+            className="w-full flex items-center justify-between px-3 py-2.5 hover:bg-slate-100 transition-colors"
           >
-            <span className="flex items-center gap-2 text-xs font-semibold text-[#91ADC8] dark:text-[#647FBC]">
+            <span className="flex items-center gap-2 text-xs font-semibold text-[#7ECBC4]">
               <Sparkles className="w-3.5 h-3.5" />
               JD Analysis
             </span>
             {showAnalysis ? (
-              <ChevronUp className="w-3.5 h-3.5 text-slate-400 dark:text-white/30" />
+              <ChevronUp className="w-3.5 h-3.5 text-slate-400" />
             ) : (
-              <ChevronDown className="w-3.5 h-3.5 text-slate-400 dark:text-white/30" />
+              <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
             )}
           </button>
 
@@ -77,7 +77,7 @@ export default function JDInputPanel({ value, onChange, jdAnalysis }: JDInputPan
                 <p className="text-[10px] font-semibold text-white/30 uppercase tracking-wider mb-1.5">Priority Keywords</p>
                 <div className="flex flex-wrap gap-1">
                   {jdAnalysis.priorityKeywords.slice(0, 10).map((kw, i) => (
-                    <span key={i} className="px-1.5 py-0.5 bg-[#647FBC]/15 text-[#647FBC] rounded text-[10px] border border-[#647FBC]/20">
+                    <span key={i} className="px-1.5 py-0.5 bg-[#1E5C40]/15 text-[#1E5C40] rounded text-[10px] border border-[#1E5C40]/20">
                       {kw}
                     </span>
                   ))}
@@ -89,7 +89,7 @@ export default function JDInputPanel({ value, onChange, jdAnalysis }: JDInputPan
                   <p className="text-[10px] font-semibold text-white/30 uppercase tracking-wider mb-1.5">Required Skills</p>
                   <div className="flex flex-wrap gap-1">
                     {jdAnalysis.requiredSkills.slice(0, 8).map((skill, i) => (
-                      <span key={i} className="px-1.5 py-0.5 bg-[#AED6CF]/20 text-[#AED6CF] rounded text-[10px] border border-[#AED6CF]/30">
+                      <span key={i} className="px-1.5 py-0.5 bg-[#3A7A62]/20 text-[#3A7A62] rounded text-[10px] border border-[#3A7A62]/30">
                         {skill}
                       </span>
                     ))}

@@ -13,16 +13,16 @@ export function formatDate(date: Date | string): string {
 }
 
 export function scoreColor(score: number): string {
-  if (score >= 80) return "text-[#647FBC]";
-  if (score >= 60) return "text-[#91ADC8]";
-  if (score >= 40) return "text-[#AED6CF]";
+  if (score >= 80) return "text-[#C8E83C]";
+  if (score >= 60) return "text-[#1E5C40]";
+  if (score >= 40) return "text-[#7ECBC4]";
   return "text-red-500";
 }
 
 export function scoreRingColor(score: number): string {
-  if (score >= 80) return "#647FBC";
-  if (score >= 60) return "#91ADC8";
-  if (score >= 40) return "#AED6CF";
+  if (score >= 80) return "#C8E83C";
+  if (score >= 60) return "#1E5C40";
+  if (score >= 40) return "#7ECBC4";
   return "#ef4444";
 }
 

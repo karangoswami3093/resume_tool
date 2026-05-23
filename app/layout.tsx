@@ -10,12 +10,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ResumeAI - ATS-Optimized Resume Builder",
+  title: "Resumint - ATS-Optimized Resume Builder",
   description:
     "AI-powered resume builder that creates ATS-optimized resumes tailored to any job description in seconds.",
   keywords: ["resume builder", "ATS resume", "AI resume", "job application", "resume optimization"],
   openGraph: {
-    title: "ResumeAI - ATS-Optimized Resume Builder",
+    title: "Resumint - ATS-Optimized Resume Builder",
     description: "Create ATS-optimized resumes with AI in seconds",
     type: "website",
   },
@@ -27,7 +27,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
+          forcedTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >
@@ -37,13 +38,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             toastOptions={{
               className: "!text-[13px]",
               style: {
-                background: "var(--toast-bg, #18181b)",
-                color: "var(--toast-fg, #fff)",
-                border: "1px solid var(--toast-border, rgba(255,255,255,0.1))",
+                background: "#ffffff",
+                color: "#0D3B2C",
+                border: "1px solid #e5e7eb",
                 fontSize: "13px",
               },
               success: {
-                iconTheme: { primary: "#6366f1", secondary: "#fff" },
+                iconTheme: { primary: "#1E5C40", secondary: "#fff" },
               },
             }}
           />

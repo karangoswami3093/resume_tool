@@ -45,14 +45,14 @@ const FAQS: FAQItem[] = [
 function FAQ({ item }: { item: FAQItem }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-slate-100 dark:border-[#AED6CF]/25 last:border-0">
+    <div className="border-b border-slate-100 last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-4 text-left gap-4"
       >
-        <span className="text-sm font-medium text-slate-800 dark:text-white">{item.q}</span>
+        <span className="text-sm font-medium text-slate-800">{item.q}</span>
         <ChevronDown
-          className={`w-4 h-4 text-slate-400 dark:text-white/30 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         />
       </button>
       <AnimatePresence>
@@ -64,7 +64,7 @@ function FAQ({ item }: { item: FAQItem }) {
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <p className="pb-4 text-sm text-slate-500 dark:text-white/45 leading-relaxed">{item.a}</p>
+            <p className="pb-4 text-sm text-slate-500 leading-relaxed">{item.a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -75,69 +75,69 @@ function FAQ({ item }: { item: FAQItem }) {
 const STEPS = [
   {
     icon: Upload,
-    color: "text-[#91ADC8] dark:text-[#647FBC]",
-    bg: "bg-[#647FBC]/10 dark:bg-[#647FBC]/10",
+    color: "text-[#7ECBC4]",
+    bg: "bg-[#1E5C40]/10",
     title: "Upload or Paste Resume",
     desc: "Upload a PDF or paste your existing resume text in the Builder. The parser extracts your experience, education, and skills automatically.",
   },
   {
     icon: FileText,
-    color: "text-[#91ADC8] dark:text-[#647FBC]",
-    bg: "bg-[#647FBC]/10 dark:bg-[#647FBC]/10",
+    color: "text-[#7ECBC4]",
+    bg: "bg-[#1E5C40]/10",
     title: "Paste the Job Description",
     desc: "Copy the full job posting and paste it into the JD panel. The AI reads required skills, preferred qualifications, and company context.",
   },
   {
     icon: Wand2,
-    color: "text-cyan-600 dark:text-cyan-400",
-    bg: "bg-cyan-50 dark:bg-cyan-500/10",
+    color: "text-cyan-600n-400",
+    bg: "bg-cyan-50n-500/10",
     title: "Choose Options",
     desc: "Pick your industry focus, generation mode (Standard, Aggressive, STAR), and target page count. Each setting shapes how the AI rewrites your resume.",
   },
   {
     icon: Zap,
-    color: "text-[#AED6CF] dark:text-[#AED6CF]",
-    bg: "bg-[#AED6CF]/10",
+    color: "text-[#3A7A62]",
+    bg: "bg-[#3A7A62]/10",
     title: "Optimize & Download",
     desc: "Hit Optimize. The AI tailors your resume, shows an ATS score with a breakdown, highlights matched and missing keywords, and exports a clean PDF.",
   },
 ];
 
 const SCORE_TIPS = [
-  { range: "80-100", label: "Excellent", color: "text-[#AED6CF]", tip: "Your resume is well-aligned. Focus on polishing language and quantifying more results." },
-  { range: "60-79", label: "Good", color: "text-[#91ADC8] dark:text-[#647FBC]", tip: "Solid match. Add missing keywords from the JD into your skills or bullets." },
-  { range: "40-59", label: "Fair", color: "text-[#91ADC8] dark:text-[#647FBC]", tip: "Use Aggressive ATS mode and ensure your skills section explicitly lists required tools." },
+  { range: "80-100", label: "Excellent", color: "text-[#3A7A62]", tip: "Your resume is well-aligned. Focus on polishing language and quantifying more results." },
+  { range: "60-79", label: "Good", color: "text-[#7ECBC4]", tip: "Solid match. Add missing keywords from the JD into your skills or bullets." },
+  { range: "40-59", label: "Fair", color: "text-[#7ECBC4]", tip: "Use Aggressive ATS mode and ensure your skills section explicitly lists required tools." },
   { range: "0-39", label: "Low", color: "text-red-500", tip: "The JD may require skills not yet in your resume, or the format needs restructuring." },
 ];
 
 export default function HelpPage() {
   return (
-    <div className="h-screen overflow-y-auto bg-[#FAFDD6] dark:bg-[#1e2a5e]">
+    <div className="h-screen overflow-y-auto bg-[#F0EBD8]">
       <div className="max-w-3xl mx-auto px-6 py-8">
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Help & Documentation</h1>
-          <p className="text-sm text-slate-400 dark:text-white/40 mt-1">
-            Everything you need to get the best results from ResumeAI.
+          <h1 className="text-2xl font-bold text-slate-900">Help & Documentation</h1>
+          <p className="text-sm text-slate-400 mt-1">
+            Everything you need to get the best results from Resumint.
           </p>
         </div>
 
         {/* Getting Started */}
         <motion.div variants={section} initial="hidden" animate="show" className="mb-6">
-          <h2 className="text-xs font-semibold text-slate-400 dark:text-white/30 uppercase tracking-widest mb-3">Getting Started</h2>
+          <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Getting Started</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {STEPS.map((s, i) => (
               <div
                 key={i}
-                className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-4 shadow-sm"
+                className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm"
               >
                 <div className={`w-9 h-9 rounded-xl ${s.bg} flex items-center justify-center mb-3`}>
                   <s.icon className={`w-4 h-4 ${s.color}`} />
                 </div>
-                <p className="text-xs font-bold text-slate-400 dark:text-white/25 uppercase tracking-wider mb-1">Step {i + 1}</p>
-                <h3 className="text-sm font-semibold text-slate-800 dark:text-white mb-1">{s.title}</h3>
-                <p className="text-xs text-slate-500 dark:text-white/40 leading-relaxed">{s.desc}</p>
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Step {i + 1}</p>
+                <h3 className="text-sm font-semibold text-slate-800 mb-1">{s.title}</h3>
+                <p className="text-xs text-slate-500 leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -145,8 +145,8 @@ export default function HelpPage() {
 
         {/* ATS Score Guide */}
         <motion.div variants={section} initial="hidden" animate="show" transition={{ delay: 0.05 }} className="mb-6">
-          <h2 className="text-xs font-semibold text-slate-400 dark:text-white/30 uppercase tracking-widest mb-3">Understanding Your ATS Score</h2>
-          <div className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm mb-3">
+          <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Understanding Your ATS Score</h2>
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm mb-3">
             <div className="grid sm:grid-cols-5 gap-3 mb-4">
               {[
                 { label: "Keyword Match", pct: "30%", desc: "JD keywords found in resume" },
@@ -156,9 +156,9 @@ export default function HelpPage() {
                 { label: "Completeness", pct: "10%", desc: "All sections filled" },
               ].map((c) => (
                 <div key={c.label} className="text-center">
-                  <div className="text-lg font-bold text-[#91ADC8] dark:text-[#647FBC]">{c.pct}</div>
-                  <div className="text-[10px] font-semibold text-slate-600 dark:text-white/60">{c.label}</div>
-                  <div className="text-[10px] text-slate-400 dark:text-white/25 mt-0.5">{c.desc}</div>
+                  <div className="text-lg font-bold text-[#7ECBC4]">{c.pct}</div>
+                  <div className="text-[10px] font-semibold text-slate-600">{c.label}</div>
+                  <div className="text-[10px] text-slate-400 mt-0.5">{c.desc}</div>
                 </div>
               ))}
             </div>
@@ -167,12 +167,12 @@ export default function HelpPage() {
             {SCORE_TIPS.map((t) => (
               <div
                 key={t.range}
-                className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-xl p-4 shadow-sm flex gap-3"
+                className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex gap-3"
               >
                 <div className={`text-sm font-bold ${t.color} shrink-0 w-14`}>{t.range}</div>
                 <div>
                   <p className={`text-xs font-semibold ${t.color} mb-0.5`}>{t.label}</p>
-                  <p className="text-[11px] text-slate-500 dark:text-white/40 leading-relaxed">{t.tip}</p>
+                  <p className="text-[11px] text-slate-500 leading-relaxed">{t.tip}</p>
                 </div>
               </div>
             ))}
@@ -181,19 +181,19 @@ export default function HelpPage() {
 
         {/* Generation Modes */}
         <motion.div variants={section} initial="hidden" animate="show" transition={{ delay: 0.1 }} className="mb-6">
-          <h2 className="text-xs font-semibold text-slate-400 dark:text-white/30 uppercase tracking-widest mb-3">Generation Modes</h2>
-          <div className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm space-y-4">
+          <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Generation Modes</h2>
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4">
             {[
-              { icon: Star, label: "Standard", color: "text-[#91ADC8]", desc: "Balanced optimization. Rewrites bullets for clarity and keyword inclusion without sounding robotic. Best for most applications." },
+              { icon: Star, label: "Standard", color: "text-[#7ECBC4]", desc: "Balanced optimization. Rewrites bullets for clarity and keyword inclusion without sounding robotic. Best for most applications." },
               { icon: Target, label: "Aggressive ATS", color: "text-red-500", desc: "Maximizes keyword density. Every required and preferred skill gets worked into the resume. Ideal when you're borderline-qualified." },
-              { icon: BarChart2, label: "STAR Bullets", color: "text-[#AED6CF]", desc: "Structures each bullet as a compressed Situation, Task, Action, Result story. Great for consulting, product management, and strategy roles." },
+              { icon: BarChart2, label: "STAR Bullets", color: "text-[#3A7A62]", desc: "Structures each bullet as a compressed Situation, Task, Action, Result story. Great for consulting, product management, and strategy roles." },
               { icon: FileText, label: "Conservative", color: "text-slate-400", desc: "Minimal rewrites. Only adds keywords where they fit naturally. Best when your resume is already strong and you don't want heavy changes." },
             ].map((m) => (
               <div key={m.label} className="flex gap-3 items-start">
                 <m.icon className={`w-4 h-4 ${m.color} mt-0.5 shrink-0`} />
                 <div>
-                  <p className="text-sm font-semibold text-slate-800 dark:text-white">{m.label}</p>
-                  <p className="text-xs text-slate-500 dark:text-white/40 mt-0.5 leading-relaxed">{m.desc}</p>
+                  <p className="text-sm font-semibold text-slate-800">{m.label}</p>
+                  <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">{m.desc}</p>
                 </div>
               </div>
             ))}
@@ -202,15 +202,15 @@ export default function HelpPage() {
 
         {/* FAQ */}
         <motion.div variants={section} initial="hidden" animate="show" transition={{ delay: 0.15 }}>
-          <h2 className="text-xs font-semibold text-slate-400 dark:text-white/30 uppercase tracking-widest mb-3">Frequently Asked Questions</h2>
-          <div className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl px-5 shadow-sm">
+          <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">Frequently Asked Questions</h2>
+          <div className="bg-white border border-slate-200 rounded-2xl px-5 shadow-sm">
             {FAQS.map((faq, i) => (
               <FAQ key={i} item={faq} />
             ))}
           </div>
         </motion.div>
 
-        <p className="text-center text-[11px] text-slate-300 dark:text-white/20 mt-8 pb-4">
+        <p className="text-center text-[11px] text-slate-300 mt-8 pb-4">
           Still have questions? Reach out via the feedback form.
         </p>
       </div>
