@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Left vertical stem – full height -->
+  <rect x="2" y="2" width="33" height="96" fill="#1A8C3E"/>
+
+  <!-- Top bowl: D-shape
+       Arc centre (67, 33), radius 32 → spans x=67..99, y=1..65 -->
+  <path d="M35,2 H67 A32,32,0,0,1 67,66 H35 Z" fill="#1A8C3E"/>
+
+  <!-- White counter (negative space inside the bowl) -->
+  <rect x="35" y="20" width="32" height="28" fill="white"/>
+
+  <!-- Bottom foot
+       Upper-left is concave (curves inward): Q bezier from (35,68)→(54,68)→(54,86)
+       Right block fills to full width -->
+  <path d="M35,68 Q54,68 54,86 V100 H35 Z" fill="#1A8C3E"/>
+  <rect x="54" y="68" width="45" height="32" fill="#1A8C3E"/>
+</svg>

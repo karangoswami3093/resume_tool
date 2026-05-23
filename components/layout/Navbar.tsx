@@ -19,12 +19,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/dashboard" className="flex items-center gap-2">
-          <div
-            className="w-7 h-7 rounded-lg flex items-center justify-center"
-            style={{ background: "#C8E83C" }}
-          >
-            <span className="font-black text-[13px] leading-none" style={{ color: "#0D3B2C" }}>r</span>
-          </div>
+          <img src="/logo.svg" alt="Resumint" className="w-7 h-7" />
           <span className="font-black text-sm tracking-tight text-slate-900">
             resu<span style={{ color: "#1E5C40" }}>mint</span>
           </span>

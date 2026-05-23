@@ -55,12 +55,7 @@ export default function Sidebar() {
     >
       {/* Logo */}
       <div className="flex items-center h-16 px-4 border-b border-gray-100 shrink-0">
-        <div
-          className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 shadow-sm"
-          style={{ background: "#C8E83C" }}
-        >
-          <span className="font-black text-[15px] leading-none" style={{ color: "#0D3B2C" }}>r</span>
-        </div>
+        <img src="/logo.svg" alt="Resumint" className="w-8 h-8 shrink-0" />
 
         <AnimatePresence>
           {!collapsed && (

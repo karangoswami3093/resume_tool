@@ -65,12 +65,7 @@ export default function LandingPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div
-              className="w-7 h-7 rounded-lg flex items-center justify-center"
-              style={{ background: "#C8E83C" }}
-            >
-              <span className="font-black text-[13px] leading-none" style={{ color: "#0D3B2C" }}>r</span>
-            </div>
+            <img src="/logo.svg" alt="Resumint" className="w-7 h-7" />
             <span className="font-black text-sm tracking-tight text-slate-900">
               resu<span style={{ color: "#1E5C40" }}>mint</span>
             </span>
