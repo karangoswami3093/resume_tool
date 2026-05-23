@@ -20,9 +20,9 @@ function mergeResumes(api: SavedResume[], local: LocalResume[]): SavedResume[] {
 }
 
 function getScoreBg(score: number) {
-  if (score >= 80) return "from-[#5DF8D8] to-[#6FD1D7]";
-  if (score >= 60) return "from-[#6FD1D7] to-[#3B7597]";
-  if (score >= 40) return "from-[#3B7597] to-[#093C5D]";
+  if (score >= 80) return "from-[#647FBC] to-[#91ADC8]";
+  if (score >= 60) return "from-[#91ADC8] to-[#AED6CF]";
+  if (score >= 40) return "from-[#AED6CF] to-[#1e2a5e]";
   return "from-red-500 to-red-700";
 }
 
@@ -44,7 +44,7 @@ export default function HistoryPage() {
     : null;
 
   return (
-    <div className="h-screen overflow-y-auto bg-white dark:bg-[#093C5D]">
+    <div className="h-screen overflow-y-auto bg-[#FAFDD6] dark:bg-[#1e2a5e]">
     <div className="max-w-4xl mx-auto px-6 py-10">
 
       {/* Header */}
@@ -57,16 +57,16 @@ export default function HistoryPage() {
 
       {/* Summary bar */}
       {resumes.length > 0 && (
-        <div className="flex items-center gap-6 mb-8 p-4 bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/25 rounded-2xl shadow-sm">
+        <div className="flex items-center gap-6 mb-8 p-4 bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl shadow-sm">
           <div className="flex items-center gap-2 text-sm">
             <Clock className="w-4 h-4 text-slate-400 dark:text-white/30" />
             <span className="text-slate-500 dark:text-white/40">{resumes.length} optimization{resumes.length > 1 ? "s" : ""}</span>
           </div>
           {bestScore != null && (
             <div className="flex items-center gap-2 text-sm">
-              <TrendingUp className="w-4 h-4 text-[#3B7597]" />
+              <TrendingUp className="w-4 h-4 text-[#AED6CF]" />
               <span className="text-slate-500 dark:text-white/40">Best score: </span>
-              <span className="font-bold text-[#3B7597] dark:text-[#3B7597]">{bestScore}/100</span>
+              <span className="font-bold text-[#AED6CF] dark:text-[#AED6CF]">{bestScore}/100</span>
             </div>
           )}
         </div>
@@ -78,13 +78,13 @@ export default function HistoryPage() {
         </div>
       ) : resumes.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-24 gap-4">
-          <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-[#3B7597]/15 flex items-center justify-center">
+          <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-[#AED6CF]/15 flex items-center justify-center">
             <TrendingUp className="w-7 h-7 text-slate-300 dark:text-white/20" />
           </div>
           <p className="text-slate-500 dark:text-white/40 text-sm font-medium">No optimization history yet</p>
           <Link
             href="/builder"
-            className="text-sm text-[#6FD1D7] dark:text-[#5DF8D8] hover:text-[#6FD1D7] dark:hover:text-[#5DF8D8] font-semibold transition-colors"
+            className="text-sm text-[#91ADC8] dark:text-[#647FBC] hover:text-[#91ADC8] dark:hover:text-[#647FBC] font-semibold transition-colors"
           >
             Start optimizing your resume
           </Link>
@@ -97,7 +97,7 @@ export default function HistoryPage() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
-              className="bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/25 rounded-2xl p-5 shadow-sm hover:border-[#6FD1D7]/40 dark:hover:border-[#5DF8D8]/20 hover:shadow-md transition-all"
+              className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm hover:border-[#91ADC8]/40 dark:hover:border-[#647FBC]/20 hover:shadow-md transition-all"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1 min-w-0 pr-4">
@@ -110,7 +110,7 @@ export default function HistoryPage() {
                       })}
                     </span>
                     {resume.isOptimized && (
-                      <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10 text-[#6FD1D7] dark:text-[#5DF8D8] rounded-full text-[10px] font-semibold">
+                      <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-[#647FBC]/10 dark:bg-[#647FBC]/10 text-[#91ADC8] dark:text-[#647FBC] rounded-full text-[10px] font-semibold">
                         <Sparkles className="w-2.5 h-2.5" />
                         AI
                       </span>
@@ -136,7 +136,7 @@ export default function HistoryPage() {
 
               {resume.atsScore != null && (
                 <div className="mb-4">
-                  <div className="h-2 bg-slate-100 dark:bg-[#3B7597]/20 rounded-full overflow-hidden">
+                  <div className="h-2 bg-slate-100 dark:bg-[#AED6CF]/20 rounded-full overflow-hidden">
                     <motion.div
                       className={`h-full rounded-full bg-gradient-to-r ${getScoreBg(resume.atsScore)}`}
                       initial={{ width: 0 }}
@@ -155,7 +155,7 @@ export default function HistoryPage() {
                 </div>
                 <Link
                   href={`/builder?id=${resume.id}`}
-                  className="text-xs font-semibold text-[#6FD1D7] dark:text-[#5DF8D8] hover:text-[#6FD1D7] dark:hover:text-[#5DF8D8] transition-colors"
+                  className="text-xs font-semibold text-[#91ADC8] dark:text-[#647FBC] hover:text-[#91ADC8] dark:hover:text-[#647FBC] transition-colors"
                 >
                   Open in Builder
                 </Link>

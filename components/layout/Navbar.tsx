@@ -21,16 +21,16 @@ export default function Navbar() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-14 bg-white/80 dark:bg-[#093C5D]/80 backdrop-blur-xl border-b border-slate-200 dark:border-[#3B7597]/25">
+    <header className="fixed top-0 left-0 right-0 z-50 h-14 bg-white/80 dark:bg-[#1e2a5e]/80 backdrop-blur-xl border-b border-slate-200 dark:border-[#AED6CF]/25">
       <div className="max-w-screen-xl mx-auto h-full px-6 flex items-center justify-between">
 
         {/* Logo */}
         <Link href="/dashboard" className="flex items-center gap-2 group">
-          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#6FD1D7] to-[#6FD1D7] flex items-center justify-center shadow-lg shadow-[#5DF8D8]/25">
+          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#91ADC8] to-[#91ADC8] flex items-center justify-center shadow-lg shadow-[#647FBC]/25">
             <Zap className="w-4 h-4 text-white" />
           </div>
           <span className="font-bold text-slate-900 dark:text-white text-sm tracking-tight">
-            Resume<span className="text-[#6FD1D7] dark:text-[#5DF8D8]">AI</span>
+            Resume<span className="text-[#91ADC8] dark:text-[#647FBC]">AI</span>
           </span>
         </Link>
 
@@ -83,7 +83,7 @@ export default function Navbar() {
           )}
 
           {/* User avatar */}
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#6FD1D7] to-[#6FD1D7] flex items-center justify-center text-xs font-bold text-white shadow-md shadow-[#5DF8D8]/25">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#91ADC8] to-[#91ADC8] flex items-center justify-center text-xs font-bold text-white shadow-md shadow-[#647FBC]/25">
             U
           </div>
         </div>

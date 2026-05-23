@@ -203,19 +203,19 @@ export default function BuilderPage() {
   ];
 
   return (
-    <div className="h-screen flex flex-col bg-white dark:bg-[#093C5D] overflow-hidden">
+    <div className="h-screen flex flex-col bg-[#FAFDD6] dark:bg-[#1e2a5e] overflow-hidden">
 
       {/* Top Bar */}
-      <div className="shrink-0 border-b border-slate-200 dark:border-[#3B7597]/25 bg-white/80 dark:bg-[#093C5D]/50 backdrop-blur px-4 py-2.5 flex items-center justify-between">
+      <div className="shrink-0 border-b border-slate-200 dark:border-[#AED6CF]/25 bg-white/80 dark:bg-[#1e2a5e]/50 backdrop-blur px-4 py-2.5 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-sm font-semibold text-slate-600 dark:text-white/70">ATS Resume Builder</span>
           {jdAnalysis && (
-            <span className="px-2 py-0.5 bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/15 text-[#6FD1D7] dark:text-[#5DF8D8] rounded-full text-xs border border-[#6FD1D7]/40 dark:border-[#5DF8D8]/20">
+            <span className="px-2 py-0.5 bg-[#647FBC]/10 dark:bg-[#647FBC]/15 text-[#91ADC8] dark:text-[#647FBC] rounded-full text-xs border border-[#91ADC8]/40 dark:border-[#647FBC]/20">
               {jdAnalysis.jobTitle}
             </span>
           )}
           {hasGuidance && (
-            <span className="px-2 py-0.5 bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/15 text-[#6FD1D7] dark:text-[#5DF8D8] rounded-full text-xs border border-[#6FD1D7]/40 dark:border-[#5DF8D8]/25 flex items-center gap-1">
+            <span className="px-2 py-0.5 bg-[#647FBC]/10 dark:bg-[#647FBC]/15 text-[#91ADC8] dark:text-[#647FBC] rounded-full text-xs border border-[#91ADC8]/40 dark:border-[#647FBC]/25 flex items-center gap-1">
               <Settings2 className="w-3 h-3" />
               Custom guidance active
             </span>
@@ -227,7 +227,7 @@ export default function BuilderPage() {
             <>
               <button
                 onClick={() => setShowBonusPanel(!showBonusPanel)}
-                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-500 dark:text-white/60 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-[#3B7597]/30 hover:border-slate-300 dark:hover:border-[#3B7597]/40 rounded-lg transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-500 dark:text-white/60 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-[#AED6CF]/30 hover:border-slate-300 dark:hover:border-[#AED6CF]/40 rounded-lg transition-colors"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 Bonus Tools
@@ -236,7 +236,7 @@ export default function BuilderPage() {
               <button
                 onClick={handleOptimize}
                 disabled={isOptimizing}
-                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-500 dark:text-white/60 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-[#3B7597]/30 hover:border-slate-300 dark:hover:border-[#3B7597]/40 rounded-lg transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-500 dark:text-white/60 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-[#AED6CF]/30 hover:border-slate-300 dark:hover:border-[#AED6CF]/40 rounded-lg transition-colors"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
                 Re-optimize
@@ -248,7 +248,7 @@ export default function BuilderPage() {
             whileTap={{ scale: 0.97 }}
             onClick={handleOptimize}
             disabled={isOptimizing || !canOptimize}
-            className="flex items-center gap-2 px-5 py-2 bg-[#5DF8D8] hover:bg-[#6FD1D7] disabled:opacity-40 disabled:cursor-not-allowed text-[#093C5D] text-sm font-semibold rounded-xl transition-colors shadow-lg shadow-[#5DF8D8]/25"
+            className="flex items-center gap-2 px-5 py-2 bg-[#647FBC] hover:bg-[#91ADC8] disabled:opacity-40 disabled:cursor-not-allowed text-[#1e2a5e] text-sm font-semibold rounded-xl transition-colors shadow-lg shadow-[#647FBC]/25"
           >
             {isOptimizing ? (
               <><Loader2 className="w-4 h-4 animate-spin" />Optimizing...</>
@@ -266,14 +266,14 @@ export default function BuilderPage() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="shrink-0 border-b border-slate-200 dark:border-[#3B7597]/25 bg-slate-50 dark:bg-[#093C5D]/30 overflow-hidden"
+            className="shrink-0 border-b border-slate-200 dark:border-[#AED6CF]/25 bg-slate-50 dark:bg-[#1e2a5e]/30 overflow-hidden"
           >
             <div className="px-4 py-3 flex items-center gap-3">
               <span className="text-xs font-semibold text-slate-400 dark:text-white/40 uppercase tracking-wider">Generate:</span>
               <button
                 onClick={handleGenerateCoverLetter}
                 disabled={isGeneratingBonus}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 dark:bg-[#3B7597]/20 hover:bg-slate-200 dark:hover:bg-[#3B7597]/30 text-slate-600 dark:text-white/70 hover:text-slate-900 dark:hover:text-white text-xs font-medium rounded-lg transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 dark:bg-[#AED6CF]/20 hover:bg-slate-200 dark:hover:bg-[#AED6CF]/30 text-slate-600 dark:text-white/70 hover:text-slate-900 dark:hover:text-white text-xs font-medium rounded-lg transition-colors"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
                 Cover Letter
@@ -281,7 +281,7 @@ export default function BuilderPage() {
               <button
                 onClick={handleGenerateInterviewQ}
                 disabled={isGeneratingBonus}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 dark:bg-[#3B7597]/20 hover:bg-slate-200 dark:hover:bg-[#3B7597]/30 text-slate-600 dark:text-white/70 hover:text-slate-900 dark:hover:text-white text-xs font-medium rounded-lg transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 dark:bg-[#AED6CF]/20 hover:bg-slate-200 dark:hover:bg-[#AED6CF]/30 text-slate-600 dark:text-white/70 hover:text-slate-900 dark:hover:text-white text-xs font-medium rounded-lg transition-colors"
               >
                 <FileText className="w-3.5 h-3.5" />
                 Interview Questions
@@ -294,12 +294,12 @@ export default function BuilderPage() {
             </div>
             {bonusTab === "cover" && coverLetter && (
               <div className="px-4 pb-4">
-                <div className="relative bg-slate-50 dark:bg-[#3B7597]/10 rounded-xl p-4 border border-slate-200 dark:border-[#3B7597]/25">
+                <div className="relative bg-slate-50 dark:bg-[#AED6CF]/10 rounded-xl p-4 border border-slate-200 dark:border-[#AED6CF]/25">
                   <button
                     onClick={() => handleCopy(coverLetter)}
                     className="absolute top-3 right-3 p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-white/10 text-slate-400 dark:text-white/30 hover:text-slate-900 dark:hover:text-white transition-colors"
                   >
-                    {copied ? <Check className="w-3.5 h-3.5 text-[#3B7597]" /> : <Copy className="w-3.5 h-3.5" />}
+                    {copied ? <Check className="w-3.5 h-3.5 text-[#AED6CF]" /> : <Copy className="w-3.5 h-3.5" />}
                   </button>
                   <p className="text-sm text-slate-600 dark:text-white/70 leading-relaxed whitespace-pre-line pr-8">{coverLetter}</p>
                 </div>
@@ -308,13 +308,13 @@ export default function BuilderPage() {
             {bonusTab === "interview" && interviewQ.length > 0 && (
               <div className="px-4 pb-4 max-h-60 overflow-y-auto space-y-2">
                 {interviewQ.map((q, i) => (
-                  <div key={i} className="bg-slate-50 dark:bg-[#3B7597]/10 rounded-xl p-3 border border-slate-200 dark:border-[#3B7597]/25">
+                  <div key={i} className="bg-slate-50 dark:bg-[#AED6CF]/10 rounded-xl p-3 border border-slate-200 dark:border-[#AED6CF]/25">
                     <div className="flex items-start gap-2.5">
-                      <span className="text-xs font-bold text-[#6FD1D7] dark:text-[#5DF8D8] shrink-0 mt-0.5">Q{i + 1}</span>
+                      <span className="text-xs font-bold text-[#91ADC8] dark:text-[#647FBC] shrink-0 mt-0.5">Q{i + 1}</span>
                       <div>
                         <p className="text-sm font-medium text-slate-900 dark:text-white">{q.question}</p>
                         <p className="text-xs text-slate-400 dark:text-white/30 mt-1">
-                          <span className="text-[#6FD1D7] dark:text-[#5DF8D8]">{q.category}</span> · {q.tipToAnswer}
+                          <span className="text-[#91ADC8] dark:text-[#647FBC]">{q.category}</span> · {q.tipToAnswer}
                         </p>
                       </div>
                     </div>
@@ -330,10 +330,10 @@ export default function BuilderPage() {
       <div className="flex-1 flex min-h-0">
 
         {/* Left Panel */}
-        <div className="w-72 shrink-0 border-r border-slate-200 dark:border-[#3B7597]/25 bg-white dark:bg-[#093C5D]/30 flex flex-col overflow-hidden">
+        <div className="w-72 shrink-0 border-r border-slate-200 dark:border-[#AED6CF]/25 bg-white dark:bg-[#1e2a5e]/30 flex flex-col overflow-hidden">
 
           {/* Tabs */}
-          <div className="shrink-0 flex border-b border-slate-200 dark:border-[#3B7597]/25">
+          <div className="shrink-0 flex border-b border-slate-200 dark:border-[#AED6CF]/25">
             {tabs.map((t) => (
               <button
                 key={t.id}
@@ -345,13 +345,13 @@ export default function BuilderPage() {
                 <span className="flex items-center justify-center gap-1">
                   {t.label}
                   {t.dot && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#6FD1D7]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#91ADC8]" />
                   )}
                 </span>
                 {activeTab === t.id && (
                   <motion.div
                     layoutId="tab-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#5DF8D8]"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#647FBC]"
                   />
                 )}
               </button>
@@ -373,9 +373,9 @@ export default function BuilderPage() {
                     <motion.div
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="mt-4 p-3 bg-[#3B7597]/10 rounded-xl border border-[#3B7597]/20"
+                      className="mt-4 p-3 bg-[#AED6CF]/10 rounded-xl border border-[#AED6CF]/20"
                     >
-                      <p className="text-xs font-semibold text-[#3B7597] mb-0.5">Resume loaded</p>
+                      <p className="text-xs font-semibold text-[#AED6CF] mb-0.5">Resume loaded</p>
                       <p className="text-sm font-bold text-slate-900 dark:text-white">{resumeData.personalInfo.name}</p>
                       <p className="text-xs text-slate-400 dark:text-white/30">{resumeData.personalInfo.email}</p>
                       <div className="mt-1.5 flex gap-3 text-xs text-slate-400 dark:text-white/30">
@@ -417,7 +417,7 @@ export default function BuilderPage() {
                       value={summaryGuidance}
                       onChange={(e) => setSummaryGuidance(e.target.value)}
                       placeholder="e.g. Lead with my healthcare data background. Mention Python and SQL. Keep tone confident but not arrogant. Don't mention soft skills."
-                      className="w-full h-24 px-3 py-2 bg-slate-50 dark:bg-[#3B7597]/10 border border-slate-200 dark:border-[#3B7597]/30 rounded-xl text-xs text-slate-800 dark:text-white/80 placeholder-slate-300 dark:placeholder-white/20 resize-none focus:outline-none focus:border-[#6FD1D7] dark:focus:border-[#5DF8D8]/50 transition-colors"
+                      className="w-full h-24 px-3 py-2 bg-slate-50 dark:bg-[#AED6CF]/10 border border-slate-200 dark:border-[#AED6CF]/30 rounded-xl text-xs text-slate-800 dark:text-white/80 placeholder-slate-300 dark:placeholder-white/20 resize-none focus:outline-none focus:border-[#91ADC8] dark:focus:border-[#647FBC]/50 transition-colors"
                     />
                   </div>
 
@@ -436,11 +436,11 @@ export default function BuilderPage() {
                         onChange={(e) => setSkillInput(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && addSkill()}
                         placeholder="Type skill + Enter"
-                        className="flex-1 px-3 py-1.5 bg-slate-50 dark:bg-[#3B7597]/10 border border-slate-200 dark:border-[#3B7597]/30 rounded-lg text-xs text-slate-800 dark:text-white/80 placeholder-slate-300 dark:placeholder-white/20 focus:outline-none focus:border-[#6FD1D7] dark:focus:border-[#5DF8D8]/50 transition-colors"
+                        className="flex-1 px-3 py-1.5 bg-slate-50 dark:bg-[#AED6CF]/10 border border-slate-200 dark:border-[#AED6CF]/30 rounded-lg text-xs text-slate-800 dark:text-white/80 placeholder-slate-300 dark:placeholder-white/20 focus:outline-none focus:border-[#91ADC8] dark:focus:border-[#647FBC]/50 transition-colors"
                       />
                       <button
                         onClick={addSkill}
-                        className="px-2.5 py-1.5 bg-[#5DF8D8] hover:bg-[#6FD1D7] rounded-lg text-[#093C5D] transition-colors"
+                        className="px-2.5 py-1.5 bg-[#647FBC] hover:bg-[#91ADC8] rounded-lg text-[#1e2a5e] transition-colors"
                       >
                         <Plus className="w-3.5 h-3.5" />
                       </button>
@@ -450,7 +450,7 @@ export default function BuilderPage() {
                         {mustIncludeSkills.map((skill) => (
                           <span
                             key={skill}
-                            className="flex items-center gap-1 px-2 py-0.5 bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/15 text-[#093C5D] dark:text-[#5DF8D8] rounded-full text-[10px] border border-[#6FD1D7]/40 dark:border-[#5DF8D8]/20"
+                            className="flex items-center gap-1 px-2 py-0.5 bg-[#647FBC]/10 dark:bg-[#647FBC]/15 text-[#1e2a5e] dark:text-[#647FBC] rounded-full text-[10px] border border-[#91ADC8]/40 dark:border-[#647FBC]/20"
                           >
                             {skill}
                             <button onClick={() => removeSkill(skill)} className="hover:text-white">
@@ -474,7 +474,7 @@ export default function BuilderPage() {
                       value={generalInstructions}
                       onChange={(e) => setGeneralInstructions(e.target.value)}
                       placeholder="e.g. Remove the 2019 internship. Don't mention R or MATLAB. Add more bullets to my current role. Keep education section short."
-                      className="w-full h-28 px-3 py-2 bg-slate-50 dark:bg-[#3B7597]/10 border border-slate-200 dark:border-[#3B7597]/30 rounded-xl text-xs text-slate-800 dark:text-white/80 placeholder-slate-300 dark:placeholder-white/20 resize-none focus:outline-none focus:border-[#6FD1D7] dark:focus:border-[#5DF8D8]/50 transition-colors"
+                      className="w-full h-28 px-3 py-2 bg-slate-50 dark:bg-[#AED6CF]/10 border border-slate-200 dark:border-[#AED6CF]/30 rounded-xl text-xs text-slate-800 dark:text-white/80 placeholder-slate-300 dark:placeholder-white/20 resize-none focus:outline-none focus:border-[#91ADC8] dark:focus:border-[#647FBC]/50 transition-colors"
                     />
                   </div>
 
@@ -497,8 +497,8 @@ export default function BuilderPage() {
                           onClick={() => setPageCount(opt.val)}
                           className={`flex flex-col items-center py-2.5 rounded-xl border text-center transition-all ${
                             pageCount === opt.val
-                              ? "border-[#5DF8D8] bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/15 text-[#093C5D] dark:text-white"
-                              : "border-slate-200 dark:border-[#3B7597]/30 bg-white dark:bg-[#3B7597]/10 text-slate-400 dark:text-white/40 hover:border-[#6FD1D7] dark:hover:border-[#3B7597]/40 hover:text-slate-700 dark:hover:text-white/60"
+                              ? "border-[#647FBC] bg-[#647FBC]/10 dark:bg-[#647FBC]/15 text-[#1e2a5e] dark:text-white"
+                              : "border-slate-200 dark:border-[#AED6CF]/30 bg-white dark:bg-[#AED6CF]/10 text-slate-400 dark:text-white/40 hover:border-[#91ADC8] dark:hover:border-[#AED6CF]/40 hover:text-slate-700 dark:hover:text-white/60"
                           }`}
                         >
                           <span className="text-xs font-bold">{opt.label}</span>
@@ -507,12 +507,12 @@ export default function BuilderPage() {
                       ))}
                     </div>
                     {pageCount === "1" && (
-                      <p className="text-[11px] text-[#6FD1D7] dark:text-[#5DF8D8]/60 mt-2">
+                      <p className="text-[11px] text-[#91ADC8] dark:text-[#647FBC]/60 mt-2">
                         AI will keep content tight and prioritize the most relevant experience.
                       </p>
                     )}
                     {pageCount === "2" && (
-                      <p className="text-[11px] text-[#6FD1D7] dark:text-[#5DF8D8]/60 mt-2">
+                      <p className="text-[11px] text-[#91ADC8] dark:text-[#647FBC]/60 mt-2">
                         AI will expand bullets and include more detail across all roles.
                       </p>
                     )}
@@ -548,8 +548,8 @@ export default function BuilderPage() {
                           onClick={() => setIndustry(industry === opt.val ? "" : opt.val)}
                           className={`flex items-center gap-2 px-2.5 py-2 rounded-xl border text-left transition-all text-xs ${
                             industry === opt.val
-                              ? "border-[#5DF8D8] bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/15 text-[#093C5D] dark:text-white font-semibold"
-                              : "border-slate-200 dark:border-[#3B7597]/30 bg-white dark:bg-[#3B7597]/10 text-slate-500 dark:text-white/40 hover:border-[#6FD1D7] dark:hover:border-[#3B7597]/40 hover:text-slate-700 dark:hover:text-white/60"
+                              ? "border-[#647FBC] bg-[#647FBC]/10 dark:bg-[#647FBC]/15 text-[#1e2a5e] dark:text-white font-semibold"
+                              : "border-slate-200 dark:border-[#AED6CF]/30 bg-white dark:bg-[#AED6CF]/10 text-slate-500 dark:text-white/40 hover:border-[#91ADC8] dark:hover:border-[#AED6CF]/40 hover:text-slate-700 dark:hover:text-white/60"
                           }`}
                         >
                           <span className="text-base leading-none">{opt.icon}</span>
@@ -558,7 +558,7 @@ export default function BuilderPage() {
                       ))}
                     </div>
                     {industry && (
-                      <p className="text-[11px] text-[#6FD1D7] dark:text-[#5DF8D8]/80 mt-2">
+                      <p className="text-[11px] text-[#91ADC8] dark:text-[#647FBC]/80 mt-2">
                         Industry-specific terminology and keywords will be applied.
                       </p>
                     )}
@@ -587,8 +587,8 @@ export default function BuilderPage() {
                           onClick={() => setMode(opt.val)}
                           className={`w-full flex items-center justify-between px-3 py-2 rounded-xl border text-left transition-all ${
                             mode === opt.val
-                              ? "border-[#5DF8D8] bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/15 text-[#093C5D] dark:text-white"
-                              : "border-slate-200 dark:border-[#3B7597]/30 bg-white dark:bg-[#3B7597]/10 text-slate-400 dark:text-white/40 hover:border-[#6FD1D7] dark:hover:border-[#3B7597]/40 hover:text-slate-700 dark:hover:text-white/60"
+                              ? "border-[#647FBC] bg-[#647FBC]/10 dark:bg-[#647FBC]/15 text-[#1e2a5e] dark:text-white"
+                              : "border-slate-200 dark:border-[#AED6CF]/30 bg-white dark:bg-[#AED6CF]/10 text-slate-400 dark:text-white/40 hover:border-[#91ADC8] dark:hover:border-[#AED6CF]/40 hover:text-slate-700 dark:hover:text-white/60"
                           }`}
                         >
                           <span className="text-xs font-semibold">{opt.label}</span>
@@ -610,19 +610,19 @@ export default function BuilderPage() {
                       onClick={() => setStarMethod((prev) => !prev)}
                       className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl border transition-all ${
                         starMethod
-                          ? "border-[#5DF8D8] bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/15 text-[#093C5D] dark:text-[#5DF8D8]"
-                          : "border-slate-200 dark:border-[#3B7597]/30 bg-white dark:bg-[#3B7597]/10 text-slate-400 dark:text-white/40 hover:border-[#6FD1D7] dark:hover:border-[#3B7597]/40 hover:text-slate-600 dark:hover:text-white/60"
+                          ? "border-[#647FBC] bg-[#647FBC]/10 dark:bg-[#647FBC]/15 text-[#1e2a5e] dark:text-[#647FBC]"
+                          : "border-slate-200 dark:border-[#AED6CF]/30 bg-white dark:bg-[#AED6CF]/10 text-slate-400 dark:text-white/40 hover:border-[#91ADC8] dark:hover:border-[#AED6CF]/40 hover:text-slate-600 dark:hover:text-white/60"
                       }`}
                     >
                       <span className="text-xs font-semibold">
                         {starMethod ? "STAR bullets ON" : "STAR bullets OFF"}
                       </span>
-                      <div className={`w-8 h-4 rounded-full transition-colors relative ${starMethod ? "bg-[#5DF8D8]" : "bg-[#3B7597]"}`}>
+                      <div className={`w-8 h-4 rounded-full transition-colors relative ${starMethod ? "bg-[#647FBC]" : "bg-[#AED6CF]"}`}>
                         <div className={`absolute top-0.5 w-3 h-3 rounded-full bg-white transition-all ${starMethod ? "left-4" : "left-0.5"}`} />
                       </div>
                     </button>
                     {starMethod && mode !== "star" && (
-                      <p className="text-[11px] text-[#6FD1D7] dark:text-[#5DF8D8]/60 mt-1.5">
+                      <p className="text-[11px] text-[#91ADC8] dark:text-[#647FBC]/60 mt-1.5">
                         STAR bullets will be applied on top of the selected mode.
                       </p>
                     )}
@@ -635,11 +635,11 @@ export default function BuilderPage() {
           </div>
 
           {/* Optimize Button */}
-          <div className="shrink-0 p-4 border-t border-slate-200 dark:border-[#3B7597]/25 bg-white dark:bg-transparent">
+          <div className="shrink-0 p-4 border-t border-slate-200 dark:border-[#AED6CF]/25 bg-white dark:bg-transparent">
             <button
               onClick={handleOptimize}
               disabled={isOptimizing || !canOptimize}
-              className="w-full flex items-center justify-center gap-2 py-2.5 bg-[#5DF8D8] hover:bg-[#6FD1D7] disabled:opacity-40 disabled:cursor-not-allowed text-[#093C5D] text-sm font-semibold rounded-xl transition-colors"
+              className="w-full flex items-center justify-center gap-2 py-2.5 bg-[#647FBC] hover:bg-[#91ADC8] disabled:opacity-40 disabled:cursor-not-allowed text-[#1e2a5e] text-sm font-semibold rounded-xl transition-colors"
             >
               {isOptimizing ? (
                 <><Loader2 className="w-4 h-4 animate-spin" />Optimizing...</>
@@ -656,7 +656,7 @@ export default function BuilderPage() {
         </div>
 
         {/* Center - Resume Preview */}
-        <div className="flex-1 min-w-0 flex flex-col border-r border-slate-200 dark:border-[#3B7597]/25">
+        <div className="flex-1 min-w-0 flex flex-col border-r border-slate-200 dark:border-[#AED6CF]/25">
           <ResumePreview
             resumeData={optimizedResume}
             isOptimizing={isOptimizing}
@@ -665,7 +665,7 @@ export default function BuilderPage() {
         </div>
 
         {/* Right - ATS Score */}
-        <div className="w-72 shrink-0 overflow-y-auto bg-white dark:bg-[#093C5D]">
+        <div className="w-72 shrink-0 overflow-y-auto bg-white dark:bg-[#1e2a5e]">
           <ATSScorePanel score={atsScore} jdAnalysis={jdAnalysis} isLoading={isOptimizing} />
         </div>
 

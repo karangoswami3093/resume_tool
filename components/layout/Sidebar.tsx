@@ -55,12 +55,12 @@ export default function Sidebar() {
     <motion.aside
       animate={{ width: W }}
       transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
-      className="relative flex flex-col h-screen bg-white dark:bg-[#093C5D] border-r border-gray-100 dark:border-[#3B7597]/25 shrink-0 overflow-hidden"
+      className="relative flex flex-col h-screen bg-white dark:bg-[#1e2a5e] border-r border-gray-100 dark:border-[#AED6CF]/25 shrink-0 overflow-hidden"
       style={{ width: W }}
     >
       {/* Logo */}
-      <div className="flex items-center h-16 px-4 border-b border-gray-100 dark:border-[#3B7597]/25 shrink-0">
-        <div className="w-8 h-8 rounded-xl bg-[#5DF8D8] flex items-center justify-center shadow-lg shadow-[#5DF8D8]/25 shrink-0">
+      <div className="flex items-center h-16 px-4 border-b border-gray-100 dark:border-[#AED6CF]/25 shrink-0">
+        <div className="w-8 h-8 rounded-xl bg-[#647FBC] flex items-center justify-center shadow-lg shadow-[#647FBC]/25 shrink-0">
           <Zap className="w-4 h-4 text-white" strokeWidth={2.5} />
         </div>
         <AnimatePresence>
@@ -72,7 +72,7 @@ export default function Sidebar() {
               transition={{ duration: 0.15 }}
               className="ml-2.5 font-bold text-sm text-gray-900 dark:text-white tracking-tight whitespace-nowrap"
             >
-              Resume<span className="text-[#6FD1D7]">AI</span>
+              Resume<span className="text-[#91ADC8]">AI</span>
             </motion.span>
           )}
         </AnimatePresence>
@@ -110,7 +110,7 @@ export default function Sidebar() {
                     href={navItem.href}
                     className={`relative flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all group ${
                       isActive
-                        ? "bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10 text-[#6FD1D7] dark:text-[#5DF8D8]"
+                        ? "bg-[#647FBC]/10 dark:bg-[#647FBC]/10 text-[#91ADC8] dark:text-[#647FBC]"
                         : "text-gray-500 dark:text-white/50 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5"
                     }`}
                     title={collapsed ? navItem.label : undefined}
@@ -119,7 +119,7 @@ export default function Sidebar() {
                     {isActive && (
                       <motion.div
                         layoutId="activeBar"
-                        className="absolute left-0 top-1 bottom-1 w-0.5 bg-[#5DF8D8] rounded-full"
+                        className="absolute left-0 top-1 bottom-1 w-0.5 bg-[#647FBC] rounded-full"
                       />
                     )}
                     <motion.div
@@ -148,7 +148,7 @@ export default function Sidebar() {
                     </AnimatePresence>
                     {/* Tooltip when collapsed */}
                     {collapsed && (
-                      <div className="absolute left-full ml-2.5 px-2.5 py-1 bg-gray-900 dark:bg-[#3B7597]/20 text-white text-xs rounded-lg shadow-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 border border-white/10">
+                      <div className="absolute left-full ml-2.5 px-2.5 py-1 bg-gray-900 dark:bg-[#AED6CF]/20 text-white text-xs rounded-lg shadow-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 border border-white/10">
                         {navItem.label}
                       </div>
                     )}
@@ -161,7 +161,7 @@ export default function Sidebar() {
       </div>
 
       {/* Bottom section */}
-      <div className="shrink-0 border-t border-gray-100 dark:border-[#3B7597]/25">
+      <div className="shrink-0 border-t border-gray-100 dark:border-[#AED6CF]/25">
 
         {/* Upgrade card — only when expanded */}
         <AnimatePresence>
@@ -171,15 +171,15 @@ export default function Sidebar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 8 }}
               transition={{ duration: 0.2 }}
-              className="mx-3 mt-3 p-3 rounded-xl bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10 border border-[#6FD1D7]/20 dark:border-[#5DF8D8]/20"
+              className="mx-3 mt-3 p-3 rounded-xl bg-[#647FBC]/10 dark:bg-[#647FBC]/10 border border-[#91ADC8]/20 dark:border-[#647FBC]/20"
             >
               <div className="flex items-center justify-between mb-1.5">
                 <p className="text-xs font-semibold text-gray-700 dark:text-white/70">Free Plan</p>
-                <span className="text-[10px] text-[#6FD1D7] dark:text-[#5DF8D8] font-bold">3/10 resumes</span>
+                <span className="text-[10px] text-[#91ADC8] dark:text-[#647FBC] font-bold">3/10 resumes</span>
               </div>
-              <div className="h-1.5 bg-[#6FD1D7]/15 dark:bg-[#5DF8D8]/15 rounded-full overflow-hidden mb-2">
+              <div className="h-1.5 bg-[#91ADC8]/15 dark:bg-[#647FBC]/15 rounded-full overflow-hidden mb-2">
                 <motion.div
-                  className="h-full bg-[#5DF8D8] rounded-full"
+                  className="h-full bg-[#647FBC] rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: "30%" }}
                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
@@ -187,7 +187,7 @@ export default function Sidebar() {
               </div>
               <Link
                 href="/settings"
-                className="flex items-center gap-1 text-[11px] font-semibold text-[#6FD1D7] dark:text-[#5DF8D8] hover:text-[#3B7597] dark:hover:text-[#5DF8D8] transition-colors"
+                className="flex items-center gap-1 text-[11px] font-semibold text-[#91ADC8] dark:text-[#647FBC] hover:text-[#AED6CF] dark:hover:text-[#647FBC] transition-colors"
               >
                 <TrendingUp className="w-3 h-3" />
                 Upgrade Your Plan
@@ -230,7 +230,7 @@ export default function Sidebar() {
                 exit={{ opacity: 0 }}
                 className="flex items-center gap-2 flex-1 min-w-0 ml-auto"
               >
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#6FD1D7] to-[#6FD1D7] flex items-center justify-center text-[11px] font-bold text-white shrink-0">
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#91ADC8] to-[#91ADC8] flex items-center justify-center text-[11px] font-bold text-white shrink-0">
                   U
                 </div>
                 <div className="min-w-0 flex-1">

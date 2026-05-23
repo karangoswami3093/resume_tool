@@ -32,8 +32,8 @@ const TEMPLATES: Template[] = [
     title: "Software Engineer",
     roles: ["Frontend Developer", "Backend Engineer", "Full Stack Dev", "DevOps Engineer"],
     tags: ["React", "Node.js", "AWS", "CI/CD", "Agile"],
-    color: "text-[#6FD1D7] dark:text-[#5DF8D8]",
-    iconBg: "bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10",
+    color: "text-[#91ADC8] dark:text-[#647FBC]",
+    iconBg: "bg-[#647FBC]/10 dark:bg-[#647FBC]/10",
     badge: "Most Popular",
     animationType: "wiggle",
   },
@@ -56,7 +56,7 @@ const TEMPLATES: Template[] = [
     title: "Data Analyst",
     roles: ["Data Analyst", "Business Intelligence", "Analytics Engineer", "BI Developer"],
     tags: ["SQL", "Python", "Power BI", "Tableau", "ETL"],
-    color: "text-[#3B7597] dark:text-blue-400",
+    color: "text-[#AED6CF] dark:text-blue-400",
     iconBg: "bg-blue-50 dark:bg-blue-500/10",
     animationType: "bounce",
   },
@@ -67,8 +67,8 @@ const TEMPLATES: Template[] = [
     title: "Financial Analyst",
     roles: ["Financial Analyst", "Investment Banking", "Risk Manager", "Portfolio Manager"],
     tags: ["Financial Modeling", "Excel", "Bloomberg", "P&L", "GAAP"],
-    color: "text-[#3B7597] dark:text-[#3B7597]",
-    iconBg: "bg-[#3B7597]/10",
+    color: "text-[#AED6CF] dark:text-[#AED6CF]",
+    iconBg: "bg-[#AED6CF]/10",
     animationType: "bounce",
   },
   {
@@ -89,8 +89,8 @@ const TEMPLATES: Template[] = [
     title: "Supply Chain Manager",
     roles: ["Supply Chain Analyst", "Logistics Manager", "Procurement Manager", "Demand Planner"],
     tags: ["SAP", "ERP", "Demand Planning", "Procurement", "Lean"],
-    color: "text-[#6FD1D7] dark:text-[#5DF8D8]",
-    iconBg: "bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10",
+    color: "text-[#91ADC8] dark:text-[#647FBC]",
+    iconBg: "bg-[#647FBC]/10 dark:bg-[#647FBC]/10",
     animationType: "wiggle",
   },
   {
@@ -111,8 +111,8 @@ const TEMPLATES: Template[] = [
     title: "Marketing Manager",
     roles: ["Growth Manager", "Digital Marketer", "Content Strategist", "SEO Specialist"],
     tags: ["SEO", "Google Ads", "HubSpot", "A/B Testing", "CRO"],
-    color: "text-[#6FD1D7] dark:text-[#5DF8D8]",
-    iconBg: "bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10",
+    color: "text-[#91ADC8] dark:text-[#647FBC]",
+    iconBg: "bg-[#647FBC]/10 dark:bg-[#647FBC]/10",
     animationType: "wiggle",
   },
   {
@@ -184,12 +184,12 @@ export default function TemplatesPage() {
   );
 
   return (
-    <div className="h-screen overflow-y-auto bg-white dark:bg-[#093C5D]">
+    <div className="h-screen overflow-y-auto bg-[#FAFDD6] dark:bg-[#1e2a5e]">
       <div className="max-w-6xl mx-auto px-6 py-8">
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-[#093C5D] dark:text-white">Resume Templates</h1>
+          <h1 className="text-2xl font-bold text-[#1e2a5e] dark:text-white">Resume Templates</h1>
           <p className="text-sm text-slate-400 dark:text-white/40 mt-1">
             Start from an industry-specific template. Each is pre-optimized for ATS with the right keywords and structure.
           </p>
@@ -202,7 +202,7 @@ export default function TemplatesPage() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by industry, role, or skill..."
-            className="w-full px-4 py-2.5 pl-10 bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/30 rounded-xl text-sm text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-white/30 focus:outline-none focus:border-[#6FD1D7] dark:focus:border-[#5DF8D8]/50 transition-colors shadow-sm"
+            className="w-full px-4 py-2.5 pl-10 bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/30 rounded-xl text-sm text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-white/30 focus:outline-none focus:border-[#91ADC8] dark:focus:border-[#647FBC]/50 transition-colors shadow-sm"
           />
           <svg className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -220,7 +220,7 @@ export default function TemplatesPage() {
             <motion.div
               key={tpl.id}
               variants={item}
-              className="group bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/25 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:border-[#6FD1D7]/40 dark:hover:border-[#5DF8D8]/20 transition-all"
+              className="group bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:border-[#91ADC8]/40 dark:hover:border-[#647FBC]/20 transition-all"
             >
               {/* Card header */}
               <div className="flex items-start justify-between mb-4">
@@ -247,7 +247,7 @@ export default function TemplatesPage() {
                   <motion.span
                     initial={{ scale: 0.9 }}
                     animate={{ scale: 1 }}
-                    className="flex items-center gap-1 px-2 py-0.5 bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10 text-[#6FD1D7] dark:text-[#5DF8D8] rounded-full text-[10px] font-semibold border border-[#6FD1D7]/40 dark:border-[#5DF8D8]/25"
+                    className="flex items-center gap-1 px-2 py-0.5 bg-[#647FBC]/10 dark:bg-[#647FBC]/10 text-[#91ADC8] dark:text-[#647FBC] rounded-full text-[10px] font-semibold border border-[#91ADC8]/40 dark:border-[#647FBC]/25"
                   >
                     <motion.div
                       animate={{ rotate: [0, 15, -15, 0] }}
@@ -262,14 +262,14 @@ export default function TemplatesPage() {
 
               {/* Industry */}
               <p className={`text-xs font-semibold ${tpl.color} mb-1`}>{tpl.industry}</p>
-              <h3 className="font-bold text-[#093C5D] dark:text-white mb-2">{tpl.title}</h3>
+              <h3 className="font-bold text-[#1e2a5e] dark:text-white mb-2">{tpl.title}</h3>
 
               {/* Roles */}
               <div className="mb-3">
                 <p className="text-[10px] text-slate-400 dark:text-white/30 uppercase tracking-wider font-semibold mb-1.5">Suitable for</p>
                 <div className="flex flex-wrap gap-1">
                   {tpl.roles.slice(0, 3).map((role) => (
-                    <span key={role} className="px-2 py-0.5 bg-slate-50 dark:bg-[#3B7597]/20 text-slate-600 dark:text-white/50 rounded-lg text-[10px] border border-slate-100 dark:border-[#3B7597]/25">
+                    <span key={role} className="px-2 py-0.5 bg-slate-50 dark:bg-[#AED6CF]/20 text-slate-600 dark:text-white/50 rounded-lg text-[10px] border border-slate-100 dark:border-[#AED6CF]/25">
                       {role}
                     </span>
                   ))}
@@ -291,7 +291,7 @@ export default function TemplatesPage() {
               {/* CTA */}
               <Link
                 href={`/builder?industry=${tpl.id}`}
-                className="w-full flex items-center justify-center gap-2 py-2.5 bg-[#093C5D] dark:bg-white hover:bg-[#093C5D]/80 dark:hover:bg-white/90 text-white dark:text-slate-900 text-sm font-semibold rounded-xl transition-all group-hover:bg-[#5DF8D8] dark:group-hover:bg-[#5DF8D8] group-hover:text-white dark:group-hover:text-white shadow-sm"
+                className="w-full flex items-center justify-center gap-2 py-2.5 bg-[#1e2a5e] dark:bg-white hover:bg-[#1e2a5e]/80 dark:hover:bg-white/90 text-white dark:text-slate-900 text-sm font-semibold rounded-xl transition-all group-hover:bg-[#647FBC] dark:group-hover:bg-[#647FBC] group-hover:text-white dark:group-hover:text-white shadow-sm"
               >
                 <motion.div
                   whileHover={{ rotate: 20, scale: 1.2 }}

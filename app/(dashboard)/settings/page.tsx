@@ -9,7 +9,7 @@ const section = { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, trans
 
 function SettingRow({ label, description, children }: { label: string; description: string; children: React.ReactNode }) {
   return (
-    <div className="flex items-center justify-between py-4 border-b border-slate-100 dark:border-[#3B7597]/25 last:border-0">
+    <div className="flex items-center justify-between py-4 border-b border-slate-100 dark:border-[#AED6CF]/25 last:border-0">
       <div>
         <p className="text-sm font-medium text-slate-800 dark:text-white">{label}</p>
         <p className="text-xs text-slate-400 dark:text-white/35 mt-0.5">{description}</p>
@@ -64,7 +64,7 @@ export default function SettingsPage() {
   ];
 
   return (
-    <div className="h-screen overflow-y-auto bg-white dark:bg-[#093C5D]">
+    <div className="h-screen overflow-y-auto bg-[#FAFDD6] dark:bg-[#1e2a5e]">
       <div className="max-w-2xl mx-auto px-6 py-8">
 
         {/* Header */}
@@ -80,7 +80,7 @@ export default function SettingsPage() {
           variants={section}
           initial="hidden"
           animate="show"
-          className="bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/25 rounded-2xl p-5 mb-4 shadow-sm"
+          className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-5 mb-4 shadow-sm"
         >
           <h2 className="text-xs font-semibold text-slate-400 dark:text-white/30 uppercase tracking-widest mb-1">Appearance</h2>
 
@@ -91,8 +91,8 @@ export default function SettingsPage() {
                   onClick={() => setTheme("light")}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
                     theme === "light"
-                      ? "bg-[#5DF8D8] border-[#5DF8D8] text-[#093C5D]"
-                      : "bg-slate-100 dark:bg-[#3B7597]/20 border-slate-200 dark:border-[#3B7597]/30 text-slate-600 dark:text-white/50 hover:border-[#6FD1D7] dark:hover:border-[#5DF8D8]"
+                      ? "bg-[#647FBC] border-[#647FBC] text-[#1e2a5e]"
+                      : "bg-slate-100 dark:bg-[#AED6CF]/20 border-slate-200 dark:border-[#AED6CF]/30 text-slate-600 dark:text-white/50 hover:border-[#91ADC8] dark:hover:border-[#647FBC]"
                   }`}
                 >
                   <Sun className="w-3.5 h-3.5" /> Light
@@ -101,8 +101,8 @@ export default function SettingsPage() {
                   onClick={() => setTheme("dark")}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
                     theme === "dark"
-                      ? "bg-[#5DF8D8] border-[#5DF8D8] text-[#093C5D]"
-                      : "bg-slate-100 dark:bg-[#3B7597]/20 border-slate-200 dark:border-[#3B7597]/30 text-slate-600 dark:text-white/50 hover:border-[#6FD1D7] dark:hover:border-[#5DF8D8]"
+                      ? "bg-[#647FBC] border-[#647FBC] text-[#1e2a5e]"
+                      : "bg-slate-100 dark:bg-[#AED6CF]/20 border-slate-200 dark:border-[#AED6CF]/30 text-slate-600 dark:text-white/50 hover:border-[#91ADC8] dark:hover:border-[#647FBC]"
                   }`}
                 >
                   <Moon className="w-3.5 h-3.5" /> Dark
@@ -118,7 +118,7 @@ export default function SettingsPage() {
           initial="hidden"
           animate="show"
           transition={{ delay: 0.05 }}
-          className="bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/25 rounded-2xl p-5 mb-4 shadow-sm"
+          className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-5 mb-4 shadow-sm"
         >
           <h2 className="text-xs font-semibold text-slate-400 dark:text-white/30 uppercase tracking-widest mb-1">Builder Defaults</h2>
 
@@ -126,7 +126,7 @@ export default function SettingsPage() {
             <select
               value={defaultMode}
               onChange={(e) => saveMode(e.target.value)}
-              className="text-xs px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-[#3B7597]/20 border border-slate-200 dark:border-[#3B7597]/30 text-slate-700 dark:text-white/70 focus:outline-none focus:border-[#6FD1D7] dark:focus:border-[#5DF8D8]"
+              className="text-xs px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-[#AED6CF]/20 border border-slate-200 dark:border-[#AED6CF]/30 text-slate-700 dark:text-white/70 focus:outline-none focus:border-[#91ADC8] dark:focus:border-[#647FBC]"
             >
               {modes.map((m) => (
                 <option key={m.value} value={m.value}>{m.label}</option>
@@ -138,7 +138,7 @@ export default function SettingsPage() {
             <select
               value={defaultPages}
               onChange={(e) => savePages(e.target.value)}
-              className="text-xs px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-[#3B7597]/20 border border-slate-200 dark:border-[#3B7597]/30 text-slate-700 dark:text-white/70 focus:outline-none focus:border-[#6FD1D7] dark:focus:border-[#5DF8D8]"
+              className="text-xs px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-[#AED6CF]/20 border border-slate-200 dark:border-[#AED6CF]/30 text-slate-700 dark:text-white/70 focus:outline-none focus:border-[#91ADC8] dark:focus:border-[#647FBC]"
             >
               <option value="1">1 Page</option>
               <option value="2">2 Pages</option>
@@ -152,7 +152,7 @@ export default function SettingsPage() {
           initial="hidden"
           animate="show"
           transition={{ delay: 0.1 }}
-          className="bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/25 rounded-2xl p-5 shadow-sm"
+          className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm"
         >
           <h2 className="text-xs font-semibold text-slate-400 dark:text-white/30 uppercase tracking-widest mb-1">Data & Privacy</h2>
 
@@ -161,12 +161,12 @@ export default function SettingsPage() {
             description="Permanently delete all locally saved resumes. This cannot be undone."
           >
             {cleared ? (
-              <span className="flex items-center gap-1.5 text-xs text-[#3B7597] font-semibold">
+              <span className="flex items-center gap-1.5 text-xs text-[#AED6CF] font-semibold">
                 <Check className="w-3.5 h-3.5" /> Cleared
               </span>
             ) : clearConfirm ? (
               <div className="flex items-center gap-2">
-                <span className="text-xs text-[#6FD1D7] flex items-center gap-1">
+                <span className="text-xs text-[#91ADC8] flex items-center gap-1">
                   <AlertTriangle className="w-3.5 h-3.5" /> Sure?
                 </span>
                 <button
@@ -177,7 +177,7 @@ export default function SettingsPage() {
                 </button>
                 <button
                   onClick={() => setClearConfirm(false)}
-                  className="px-3 py-1.5 bg-slate-100 dark:bg-[#3B7597]/20 text-slate-600 dark:text-white/50 text-xs font-semibold rounded-lg transition-all"
+                  className="px-3 py-1.5 bg-slate-100 dark:bg-[#AED6CF]/20 text-slate-600 dark:text-white/50 text-xs font-semibold rounded-lg transition-all"
                 >
                   Cancel
                 </button>
@@ -193,7 +193,7 @@ export default function SettingsPage() {
           </SettingRow>
 
           <SettingRow label="Storage" description="Where your resume data is stored">
-            <span className="text-xs text-slate-500 dark:text-white/40 bg-slate-100 dark:bg-[#3B7597]/20 px-2.5 py-1 rounded-lg">
+            <span className="text-xs text-slate-500 dark:text-white/40 bg-slate-100 dark:bg-[#AED6CF]/20 px-2.5 py-1 rounded-lg">
               Local browser only
             </span>
           </SettingRow>

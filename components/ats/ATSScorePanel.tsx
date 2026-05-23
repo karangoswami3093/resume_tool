@@ -21,7 +21,7 @@ function ScoreRing({ value, max, color, label }: { value: number; max: number; c
   return (
     <div className="flex flex-col items-center gap-1">
       <svg width="52" height="52" viewBox="0 0 52 52">
-        <circle cx="26" cy="26" r={r} fill="none" stroke="currentColor" className="text-slate-200 dark:text-[#3B7597]" strokeWidth="4" />
+        <circle cx="26" cy="26" r={r} fill="none" stroke="currentColor" className="text-slate-200 dark:text-[#AED6CF]" strokeWidth="4" />
         <motion.circle
           cx="26" cy="26" r={r}
           fill="none" stroke={color} strokeWidth="4"
@@ -53,7 +53,7 @@ export default function ATSScorePanel({ score, jdAnalysis, isLoading }: ATSScore
   if (!score) {
     return (
       <div className="flex flex-col items-center justify-center h-full gap-4 px-4 text-center">
-        <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-[#3B7597]/20 flex items-center justify-center">
+        <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-[#AED6CF]/20 flex items-center justify-center">
           <Target className="w-8 h-8 text-slate-300 dark:text-white/20" />
         </div>
         <p className="text-slate-400 dark:text-white/40 text-sm leading-relaxed">
@@ -75,7 +75,7 @@ export default function ATSScorePanel({ score, jdAnalysis, isLoading }: ATSScore
       <div className="flex flex-col items-center gap-2 py-4">
         <div className="relative">
           <svg width="120" height="120" viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" className="text-slate-200 dark:text-[#3B7597]" strokeWidth="8" />
+            <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" className="text-slate-200 dark:text-[#AED6CF]" strokeWidth="8" />
             <motion.circle
               cx="60" cy="60" r="45"
               fill="none" stroke={overallColor} strokeWidth="8"
@@ -108,14 +108,14 @@ export default function ATSScorePanel({ score, jdAnalysis, isLoading }: ATSScore
       </div>
 
       {/* Keyword Match */}
-      <div className="bg-slate-50 dark:bg-[#3B7597]/15 rounded-xl p-3 border border-slate-100 dark:border-[#3B7597]/25">
+      <div className="bg-slate-50 dark:bg-[#AED6CF]/15 rounded-xl p-3 border border-slate-100 dark:border-[#AED6CF]/25">
         <div className="flex justify-between items-center mb-2">
           <span className="text-xs font-semibold text-slate-500 dark:text-white/60 uppercase tracking-wider">Keyword Match</span>
           <span className={`text-sm font-bold ${scoreColor(score.keywordMatchPercentage)}`}>
             {score.keywordMatchPercentage}%
           </span>
         </div>
-        <div className="h-2 bg-slate-200 dark:bg-[#3B7597]/20 rounded-full overflow-hidden">
+        <div className="h-2 bg-slate-200 dark:bg-[#AED6CF]/20 rounded-full overflow-hidden">
           <motion.div
             className="h-full rounded-full"
             style={{ backgroundColor: scoreRingColor(score.keywordMatchPercentage) }}
@@ -140,12 +140,12 @@ export default function ATSScorePanel({ score, jdAnalysis, isLoading }: ATSScore
       {score.matchedKeywords.length > 0 && (
         <div>
           <p className="text-xs font-semibold text-slate-500 dark:text-white/50 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-            <CheckCircle2 className="w-3.5 h-3.5 text-[#3B7597]" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-[#AED6CF]" />
             Matched ({score.matchedKeywords.length})
           </p>
           <div className="flex flex-wrap gap-1.5">
             {score.matchedKeywords.slice(0, 12).map((kw, i) => (
-              <span key={i} className="px-2 py-0.5 bg-[#3B7597]/10 text-[#3B7597] dark:text-[#3B7597] rounded-full text-[10px] font-medium border border-[#3B7597]/20">
+              <span key={i} className="px-2 py-0.5 bg-[#AED6CF]/10 text-[#AED6CF] dark:text-[#AED6CF] rounded-full text-[10px] font-medium border border-[#AED6CF]/20">
                 {kw}
               </span>
             ))}
@@ -186,13 +186,13 @@ export default function ATSScorePanel({ score, jdAnalysis, isLoading }: ATSScore
       {score.suggestions.length > 0 && (
         <div>
           <p className="text-xs font-semibold text-slate-500 dark:text-white/50 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-            <Lightbulb className="w-3.5 h-3.5 text-[#6FD1D7]" />
+            <Lightbulb className="w-3.5 h-3.5 text-[#91ADC8]" />
             Suggestions
           </p>
           <div className="space-y-1.5">
             {score.suggestions.map((s, i) => (
-              <div key={i} className="flex gap-2 bg-[#5DF8D8]/10 dark:bg-[#3B7597]/15 border border-[#6FD1D7]/20 dark:border-[#3B7597]/25 rounded-lg p-2.5">
-                <span className="text-[#6FD1D7] text-xs mt-0.5">•</span>
+              <div key={i} className="flex gap-2 bg-[#647FBC]/10 dark:bg-[#AED6CF]/15 border border-[#91ADC8]/20 dark:border-[#AED6CF]/25 rounded-lg p-2.5">
+                <span className="text-[#91ADC8] text-xs mt-0.5">•</span>
                 <p className="text-xs text-slate-600 dark:text-white/60 leading-relaxed">{s}</p>
               </div>
             ))}
@@ -204,13 +204,13 @@ export default function ATSScorePanel({ score, jdAnalysis, isLoading }: ATSScore
       {score.strengths.length > 0 && (
         <div>
           <p className="text-xs font-semibold text-slate-500 dark:text-white/50 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-            <TrendingUp className="w-3.5 h-3.5 text-[#6FD1D7]" />
+            <TrendingUp className="w-3.5 h-3.5 text-[#91ADC8]" />
             Strengths
           </p>
           <div className="space-y-1.5">
             {score.strengths.map((s, i) => (
-              <div key={i} className="flex gap-2 bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10 rounded-lg p-2.5 border border-[#6FD1D7]/20 dark:border-[#5DF8D8]/20">
-                <span className="text-[#6FD1D7] text-xs mt-0.5">✓</span>
+              <div key={i} className="flex gap-2 bg-[#647FBC]/10 dark:bg-[#647FBC]/10 rounded-lg p-2.5 border border-[#91ADC8]/20 dark:border-[#647FBC]/20">
+                <span className="text-[#91ADC8] text-xs mt-0.5">✓</span>
                 <p className="text-xs text-slate-600 dark:text-white/60 leading-relaxed">{s}</p>
               </div>
             ))}
@@ -220,7 +220,7 @@ export default function ATSScorePanel({ score, jdAnalysis, isLoading }: ATSScore
 
       {/* JD Role Info */}
       {jdAnalysis && (
-        <div className="bg-slate-50 dark:bg-[#3B7597]/15 rounded-xl p-3 border border-slate-200 dark:border-[#3B7597]/25">
+        <div className="bg-slate-50 dark:bg-[#AED6CF]/15 rounded-xl p-3 border border-slate-200 dark:border-[#AED6CF]/25">
           <p className="text-xs font-semibold text-slate-400 dark:text-white/50 uppercase tracking-wider mb-2">Target Role</p>
           <p className="text-sm font-semibold text-slate-900 dark:text-white">{jdAnalysis.jobTitle}</p>
           <p className="text-xs text-slate-400 dark:text-white/40">{jdAnalysis.industry} · {jdAnalysis.experienceLevel}</p>

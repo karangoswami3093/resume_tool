@@ -45,7 +45,7 @@ const FAQS: FAQItem[] = [
 function FAQ({ item }: { item: FAQItem }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-slate-100 dark:border-[#3B7597]/25 last:border-0">
+    <div className="border-b border-slate-100 dark:border-[#AED6CF]/25 last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-4 text-left gap-4"
@@ -75,15 +75,15 @@ function FAQ({ item }: { item: FAQItem }) {
 const STEPS = [
   {
     icon: Upload,
-    color: "text-[#6FD1D7] dark:text-[#5DF8D8]",
-    bg: "bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10",
+    color: "text-[#91ADC8] dark:text-[#647FBC]",
+    bg: "bg-[#647FBC]/10 dark:bg-[#647FBC]/10",
     title: "Upload or Paste Resume",
     desc: "Upload a PDF or paste your existing resume text in the Builder. The parser extracts your experience, education, and skills automatically.",
   },
   {
     icon: FileText,
-    color: "text-[#6FD1D7] dark:text-[#5DF8D8]",
-    bg: "bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10",
+    color: "text-[#91ADC8] dark:text-[#647FBC]",
+    bg: "bg-[#647FBC]/10 dark:bg-[#647FBC]/10",
     title: "Paste the Job Description",
     desc: "Copy the full job posting and paste it into the JD panel. The AI reads required skills, preferred qualifications, and company context.",
   },
@@ -96,23 +96,23 @@ const STEPS = [
   },
   {
     icon: Zap,
-    color: "text-[#3B7597] dark:text-[#3B7597]",
-    bg: "bg-[#3B7597]/10",
+    color: "text-[#AED6CF] dark:text-[#AED6CF]",
+    bg: "bg-[#AED6CF]/10",
     title: "Optimize & Download",
     desc: "Hit Optimize. The AI tailors your resume, shows an ATS score with a breakdown, highlights matched and missing keywords, and exports a clean PDF.",
   },
 ];
 
 const SCORE_TIPS = [
-  { range: "80-100", label: "Excellent", color: "text-[#3B7597]", tip: "Your resume is well-aligned. Focus on polishing language and quantifying more results." },
-  { range: "60-79", label: "Good", color: "text-[#6FD1D7] dark:text-[#5DF8D8]", tip: "Solid match. Add missing keywords from the JD into your skills or bullets." },
-  { range: "40-59", label: "Fair", color: "text-[#6FD1D7] dark:text-[#5DF8D8]", tip: "Use Aggressive ATS mode and ensure your skills section explicitly lists required tools." },
+  { range: "80-100", label: "Excellent", color: "text-[#AED6CF]", tip: "Your resume is well-aligned. Focus on polishing language and quantifying more results." },
+  { range: "60-79", label: "Good", color: "text-[#91ADC8] dark:text-[#647FBC]", tip: "Solid match. Add missing keywords from the JD into your skills or bullets." },
+  { range: "40-59", label: "Fair", color: "text-[#91ADC8] dark:text-[#647FBC]", tip: "Use Aggressive ATS mode and ensure your skills section explicitly lists required tools." },
   { range: "0-39", label: "Low", color: "text-red-500", tip: "The JD may require skills not yet in your resume, or the format needs restructuring." },
 ];
 
 export default function HelpPage() {
   return (
-    <div className="h-screen overflow-y-auto bg-white dark:bg-[#093C5D]">
+    <div className="h-screen overflow-y-auto bg-[#FAFDD6] dark:bg-[#1e2a5e]">
       <div className="max-w-3xl mx-auto px-6 py-8">
 
         {/* Header */}
@@ -130,7 +130,7 @@ export default function HelpPage() {
             {STEPS.map((s, i) => (
               <div
                 key={i}
-                className="bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/25 rounded-2xl p-4 shadow-sm"
+                className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-4 shadow-sm"
               >
                 <div className={`w-9 h-9 rounded-xl ${s.bg} flex items-center justify-center mb-3`}>
                   <s.icon className={`w-4 h-4 ${s.color}`} />
@@ -146,7 +146,7 @@ export default function HelpPage() {
         {/* ATS Score Guide */}
         <motion.div variants={section} initial="hidden" animate="show" transition={{ delay: 0.05 }} className="mb-6">
           <h2 className="text-xs font-semibold text-slate-400 dark:text-white/30 uppercase tracking-widest mb-3">Understanding Your ATS Score</h2>
-          <div className="bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/25 rounded-2xl p-5 shadow-sm mb-3">
+          <div className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm mb-3">
             <div className="grid sm:grid-cols-5 gap-3 mb-4">
               {[
                 { label: "Keyword Match", pct: "30%", desc: "JD keywords found in resume" },
@@ -156,7 +156,7 @@ export default function HelpPage() {
                 { label: "Completeness", pct: "10%", desc: "All sections filled" },
               ].map((c) => (
                 <div key={c.label} className="text-center">
-                  <div className="text-lg font-bold text-[#6FD1D7] dark:text-[#5DF8D8]">{c.pct}</div>
+                  <div className="text-lg font-bold text-[#91ADC8] dark:text-[#647FBC]">{c.pct}</div>
                   <div className="text-[10px] font-semibold text-slate-600 dark:text-white/60">{c.label}</div>
                   <div className="text-[10px] text-slate-400 dark:text-white/25 mt-0.5">{c.desc}</div>
                 </div>
@@ -167,7 +167,7 @@ export default function HelpPage() {
             {SCORE_TIPS.map((t) => (
               <div
                 key={t.range}
-                className="bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/25 rounded-xl p-4 shadow-sm flex gap-3"
+                className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-xl p-4 shadow-sm flex gap-3"
               >
                 <div className={`text-sm font-bold ${t.color} shrink-0 w-14`}>{t.range}</div>
                 <div>
@@ -182,11 +182,11 @@ export default function HelpPage() {
         {/* Generation Modes */}
         <motion.div variants={section} initial="hidden" animate="show" transition={{ delay: 0.1 }} className="mb-6">
           <h2 className="text-xs font-semibold text-slate-400 dark:text-white/30 uppercase tracking-widest mb-3">Generation Modes</h2>
-          <div className="bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/25 rounded-2xl p-5 shadow-sm space-y-4">
+          <div className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm space-y-4">
             {[
-              { icon: Star, label: "Standard", color: "text-[#6FD1D7]", desc: "Balanced optimization. Rewrites bullets for clarity and keyword inclusion without sounding robotic. Best for most applications." },
+              { icon: Star, label: "Standard", color: "text-[#91ADC8]", desc: "Balanced optimization. Rewrites bullets for clarity and keyword inclusion without sounding robotic. Best for most applications." },
               { icon: Target, label: "Aggressive ATS", color: "text-red-500", desc: "Maximizes keyword density. Every required and preferred skill gets worked into the resume. Ideal when you're borderline-qualified." },
-              { icon: BarChart2, label: "STAR Bullets", color: "text-[#3B7597]", desc: "Structures each bullet as a compressed Situation, Task, Action, Result story. Great for consulting, product management, and strategy roles." },
+              { icon: BarChart2, label: "STAR Bullets", color: "text-[#AED6CF]", desc: "Structures each bullet as a compressed Situation, Task, Action, Result story. Great for consulting, product management, and strategy roles." },
               { icon: FileText, label: "Conservative", color: "text-slate-400", desc: "Minimal rewrites. Only adds keywords where they fit naturally. Best when your resume is already strong and you don't want heavy changes." },
             ].map((m) => (
               <div key={m.label} className="flex gap-3 items-start">
@@ -203,7 +203,7 @@ export default function HelpPage() {
         {/* FAQ */}
         <motion.div variants={section} initial="hidden" animate="show" transition={{ delay: 0.15 }}>
           <h2 className="text-xs font-semibold text-slate-400 dark:text-white/30 uppercase tracking-widest mb-3">Frequently Asked Questions</h2>
-          <div className="bg-white dark:bg-[#093C5D]/60 border border-slate-200 dark:border-[#3B7597]/25 rounded-2xl px-5 shadow-sm">
+          <div className="bg-white dark:bg-[#1e2a5e]/60 border border-slate-200 dark:border-[#AED6CF]/25 rounded-2xl px-5 shadow-sm">
             {FAQS.map((faq, i) => (
               <FAQ key={i} item={faq} />
             ))}

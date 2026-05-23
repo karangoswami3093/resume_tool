@@ -43,10 +43,10 @@ function CountUp({ to, duration = 1000 }: { to: number; duration?: number }) {
 }
 
 const SCORE_COLOR = (s: number) =>
-  s >= 80 ? "#5DF8D8" : s >= 60 ? "#6FD1D7" : s >= 40 ? "#3B7597" : "#ef4444";
+  s >= 80 ? "#647FBC" : s >= 60 ? "#91ADC8" : s >= 40 ? "#AED6CF" : "#ef4444";
 
-const ORANGE = "#5DF8D8";
-const BLUE = "#6FD1D7";
+const ORANGE = "#647FBC";
+const BLUE = "#91ADC8";
 
 const stagger = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.08 } } };
 const fadeUp = { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0, transition: { duration: 0.35 } } };
@@ -55,7 +55,7 @@ const fadeUp = { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0, transi
 function ChartTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="bg-white dark:bg-[#093C5D] border border-gray-100 dark:border-[#3B7597]/30 rounded-xl shadow-xl px-3.5 py-2.5 text-xs">
+    <div className="bg-white dark:bg-[#1e2a5e] border border-gray-100 dark:border-[#AED6CF]/30 rounded-xl shadow-xl px-3.5 py-2.5 text-xs">
       <p className="text-gray-400 dark:text-white/40 mb-1">{label}</p>
       {payload.map((p: any, i: number) => (
         <div key={i} className="flex items-center gap-2 font-semibold" style={{ color: p.color }}>
@@ -136,7 +136,7 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="h-screen overflow-y-auto bg-white dark:bg-[#093C5D]">
+    <div className="h-screen overflow-y-auto bg-[#FAFDD6] dark:bg-[#1e2a5e]">
       <div className="max-w-7xl mx-auto px-6 py-6">
 
         {/* ── Header ── */}
@@ -148,20 +148,20 @@ export default function DashboardPage() {
             </p>
           </div>
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 px-3.5 py-2 bg-white dark:bg-[#093C5D] border border-gray-200 dark:border-[#3B7597]/30 rounded-xl text-sm text-gray-500 dark:text-white/50 shadow-sm">
+            <div className="flex items-center gap-1.5 px-3.5 py-2 bg-white dark:bg-[#1e2a5e] border border-gray-200 dark:border-[#AED6CF]/30 rounded-xl text-sm text-gray-500 dark:text-white/50 shadow-sm">
               <Calendar className="w-3.5 h-3.5" />
               {new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
             </div>
             <Link
               href="/history"
-              className="flex items-center gap-1.5 px-3.5 py-2 bg-white dark:bg-[#093C5D] border border-gray-200 dark:border-[#3B7597]/30 rounded-xl text-sm text-gray-600 dark:text-white/60 font-medium shadow-sm hover:border-gray-300 dark:hover:border-[#3B7597]/40 transition-all"
+              className="flex items-center gap-1.5 px-3.5 py-2 bg-white dark:bg-[#1e2a5e] border border-gray-200 dark:border-[#AED6CF]/30 rounded-xl text-sm text-gray-600 dark:text-white/60 font-medium shadow-sm hover:border-gray-300 dark:hover:border-[#AED6CF]/40 transition-all"
             >
               <Upload className="w-3.5 h-3.5" />
               Export
             </Link>
             <Link
               href="/builder"
-              className="flex items-center gap-1.5 px-4 py-2 bg-[#5DF8D8] hover:bg-[#6FD1D7] text-[#093C5D] text-sm font-semibold rounded-xl transition-all shadow-lg shadow-[#5DF8D8]/25 hover:shadow-[#5DF8D8]/25 hover:scale-[1.02]"
+              className="flex items-center gap-1.5 px-4 py-2 bg-[#647FBC] hover:bg-[#91ADC8] text-[#1e2a5e] text-sm font-semibold rounded-xl transition-all shadow-lg shadow-[#647FBC]/25 hover:shadow-[#647FBC]/25 hover:scale-[1.02]"
             >
               <Zap className="w-3.5 h-3.5" />
               AI Optimize
@@ -180,7 +180,7 @@ export default function DashboardPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35 }}
-              className="bg-white dark:bg-[#093C5D]/60 border border-gray-100 dark:border-[#3B7597]/25 rounded-2xl p-5 shadow-sm"
+              className="bg-white dark:bg-[#1e2a5e]/60 border border-gray-100 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm"
             >
               <div className="flex items-start justify-between mb-3">
                 <div>
@@ -191,7 +191,7 @@ export default function DashboardPage() {
                       <span className="text-lg font-normal text-gray-300 dark:text-white/20">/100</span>
                     </p>
                     {avgScore > 0 && (
-                      <span className="flex items-center gap-1 text-sm font-semibold text-[#3B7597] mb-1">
+                      <span className="flex items-center gap-1 text-sm font-semibold text-[#AED6CF] mb-1">
                         <TrendingUp className="w-3.5 h-3.5" />
                         avg {avgScore}
                       </span>
@@ -201,7 +201,7 @@ export default function DashboardPage() {
                 <div className="flex items-center gap-2">
                   <div className="text-right">
                     <p className="text-xs text-gray-400 dark:text-white/30">Target</p>
-                    <p className="text-sm font-bold text-[#6FD1D7]">95 / 100</p>
+                    <p className="text-sm font-bold text-[#91ADC8]">95 / 100</p>
                   </div>
                   <MoreHorizontal className="w-4 h-4 text-gray-300 dark:text-white/20" />
                 </div>
@@ -210,9 +210,9 @@ export default function DashboardPage() {
               {/* Dual progress bars */}
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <div className="flex-1 h-2.5 bg-gray-100 dark:bg-[#3B7597]/20 rounded-full overflow-hidden">
+                  <div className="flex-1 h-2.5 bg-gray-100 dark:bg-[#AED6CF]/20 rounded-full overflow-hidden">
                     <motion.div
-                      className="h-full rounded-full bg-[#5DF8D8]"
+                      className="h-full rounded-full bg-[#647FBC]"
                       initial={{ width: 0 }}
                       animate={{ width: `${bestScore}%` }}
                       transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -221,9 +221,9 @@ export default function DashboardPage() {
                   <span className="text-xs text-gray-400 dark:text-white/30 w-8 text-right">{bestScore}%</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="flex-1 h-2.5 bg-gray-100 dark:bg-[#3B7597]/20 rounded-full overflow-hidden">
+                  <div className="flex-1 h-2.5 bg-gray-100 dark:bg-[#AED6CF]/20 rounded-full overflow-hidden">
                     <motion.div
-                      className="h-full rounded-full bg-[#3B7597]"
+                      className="h-full rounded-full bg-[#AED6CF]"
                       initial={{ width: 0 }}
                       animate={{ width: `${avgScore}%` }}
                       transition={{ duration: 1, ease: "easeOut", delay: 0.35 }}
@@ -233,7 +233,7 @@ export default function DashboardPage() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-50 dark:border-[#3B7597]/25">
+              <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-50 dark:border-[#AED6CF]/25">
                 <p className="text-xs text-gray-400 dark:text-white/30">
                   Next target to achieve
                 </p>
@@ -246,21 +246,21 @@ export default function DashboardPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, delay: 0.1 }}
-              className="bg-white dark:bg-[#093C5D]/60 border border-gray-100 dark:border-[#3B7597]/25 rounded-2xl p-5 shadow-sm"
+              className="bg-white dark:bg-[#1e2a5e]/60 border border-gray-100 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm"
             >
               <div className="flex items-center justify-between mb-5">
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">ATS Score Trend</h3>
                   <p className="text-xs text-gray-400 dark:text-white/40 mt-0.5">Score per optimized resume</p>
                 </div>
-                <div className="flex items-center gap-1.5 p-1 bg-gray-100 dark:bg-[#3B7597]/20 rounded-xl">
+                <div className="flex items-center gap-1.5 p-1 bg-gray-100 dark:bg-[#AED6CF]/20 rounded-xl">
                   {(["all", "recent"] as const).map((v) => (
                     <button
                       key={v}
                       onClick={() => setChartView(v)}
                       className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all capitalize ${
                         chartView === v
-                          ? "bg-white dark:bg-[#3B7597]/20 text-gray-900 dark:text-white shadow-sm"
+                          ? "bg-white dark:bg-[#AED6CF]/20 text-gray-900 dark:text-white shadow-sm"
                           : "text-gray-400 dark:text-white/40 hover:text-gray-600 dark:hover:text-white/60"
                       }`}
                     >
@@ -274,7 +274,7 @@ export default function DashboardPage() {
                 <div className="flex flex-col items-center justify-center h-44 gap-3">
                   <BarChart3 className="w-10 h-10 text-gray-100 dark:text-white/10" />
                   <p className="text-sm text-gray-400 dark:text-white/30">Optimize a resume to see your trend</p>
-                  <Link href="/builder" className="text-xs text-[#6FD1D7] font-semibold hover:text-[#6FD1D7] transition-colors">
+                  <Link href="/builder" className="text-xs text-[#91ADC8] font-semibold hover:text-[#91ADC8] transition-colors">
                     Go to Builder
                   </Link>
                 </div>
@@ -303,7 +303,7 @@ export default function DashboardPage() {
                       strokeWidth={2.5}
                       fill="url(#scoreGrad)"
                       dot={{ fill: ORANGE, strokeWidth: 0, r: 3 }}
-                      activeDot={{ r: 6, fill: "#093C5D", stroke: ORANGE, strokeWidth: 2.5 }}
+                      activeDot={{ r: 6, fill: "#1e2a5e", stroke: ORANGE, strokeWidth: 2.5 }}
                     />
                     <Area
                       type="monotone"
@@ -313,7 +313,7 @@ export default function DashboardPage() {
                       strokeWidth={2}
                       fill="url(#kwGrad)"
                       dot={false}
-                      activeDot={{ r: 5, fill: "#093C5D", stroke: BLUE, strokeWidth: 2 }}
+                      activeDot={{ r: 5, fill: "#1e2a5e", stroke: BLUE, strokeWidth: 2 }}
                       strokeDasharray="5 3"
                     />
                   </AreaChart>
@@ -322,13 +322,13 @@ export default function DashboardPage() {
 
               {/* Legend */}
               {areaData.length > 0 && (
-                <div className="flex items-center gap-5 mt-3 pt-3 border-t border-gray-50 dark:border-[#3B7597]/25">
+                <div className="flex items-center gap-5 mt-3 pt-3 border-t border-gray-50 dark:border-[#AED6CF]/25">
                   <span className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-white/40">
-                    <span className="w-3 h-0.5 rounded-full bg-[#5DF8D8] inline-block" />
+                    <span className="w-3 h-0.5 rounded-full bg-[#647FBC] inline-block" />
                     ATS Score
                   </span>
                   <span className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-white/40">
-                    <span className="w-3 h-0.5 rounded-full bg-[#3B7597] inline-block border-dashed" />
+                    <span className="w-3 h-0.5 rounded-full bg-[#AED6CF] inline-block border-dashed" />
                     Keyword Match
                   </span>
                 </div>
@@ -340,14 +340,14 @@ export default function DashboardPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, delay: 0.2 }}
-              className="bg-white dark:bg-[#093C5D]/60 border border-gray-100 dark:border-[#3B7597]/25 rounded-2xl shadow-sm overflow-hidden"
+              className="bg-white dark:bg-[#1e2a5e]/60 border border-gray-100 dark:border-[#AED6CF]/25 rounded-2xl shadow-sm overflow-hidden"
             >
-              <div className="flex items-center justify-between px-5 py-4 border-b border-gray-50 dark:border-[#3B7597]/25">
+              <div className="flex items-center justify-between px-5 py-4 border-b border-gray-50 dark:border-[#AED6CF]/25">
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">Recent Resumes</h3>
                   <p className="text-xs text-gray-400 dark:text-white/40 mt-0.5">Your AI-optimized resume history</p>
                 </div>
-                <Link href="/history" className="flex items-center gap-1 text-xs text-[#6FD1D7] font-semibold hover:text-[#6FD1D7] transition-colors">
+                <Link href="/history" className="flex items-center gap-1 text-xs text-[#91ADC8] font-semibold hover:text-[#91ADC8] transition-colors">
                   View all <ChevronRight className="w-3 h-3" />
                 </Link>
               </div>
@@ -358,14 +358,14 @@ export default function DashboardPage() {
                 </div>
               ) : resumes.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-14 gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10 flex items-center justify-center">
-                    <FileText className="w-6 h-6 text-[#5DF8D8]" />
+                  <div className="w-14 h-14 rounded-2xl bg-[#647FBC]/10 dark:bg-[#647FBC]/10 flex items-center justify-center">
+                    <FileText className="w-6 h-6 text-[#647FBC]" />
                   </div>
                   <div className="text-center">
                     <p className="font-medium text-gray-500 dark:text-white/40">No resumes yet</p>
                     <p className="text-sm text-gray-400 dark:text-white/25 mt-0.5">Create your first AI-optimized resume</p>
                   </div>
-                  <Link href="/builder" className="flex items-center gap-2 px-4 py-2 bg-[#5DF8D8] hover:bg-[#6FD1D7] text-[#093C5D] text-sm font-semibold rounded-xl transition-all shadow-lg shadow-[#5DF8D8]/25">
+                  <Link href="/builder" className="flex items-center gap-2 px-4 py-2 bg-[#647FBC] hover:bg-[#91ADC8] text-[#1e2a5e] text-sm font-semibold rounded-xl transition-all shadow-lg shadow-[#647FBC]/25">
                     <Sparkles className="w-3.5 h-3.5" />
                     Start Building
                   </Link>
@@ -373,7 +373,7 @@ export default function DashboardPage() {
               ) : (
                 <div>
                   {/* Table header */}
-                  <div className="grid grid-cols-12 gap-4 px-5 py-2.5 bg-gray-50 dark:bg-[#3B7597]/10">
+                  <div className="grid grid-cols-12 gap-4 px-5 py-2.5 bg-gray-50 dark:bg-[#AED6CF]/10">
                     <p className="col-span-5 text-[10px] font-semibold text-gray-400 dark:text-white/30 uppercase tracking-wider">Resume</p>
                     <p className="col-span-2 text-[10px] font-semibold text-gray-400 dark:text-white/30 uppercase tracking-wider">Date</p>
                     <p className="col-span-2 text-[10px] font-semibold text-gray-400 dark:text-white/30 uppercase tracking-wider">ATS</p>
@@ -387,16 +387,16 @@ export default function DashboardPage() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.25 + i * 0.04 }}
-                      className="grid grid-cols-12 gap-4 px-5 py-3.5 border-b border-gray-50 dark:border-[#3B7597]/25 last:border-0 hover:bg-[#5DF8D8]/10/30 dark:hover:bg-white/[0.02] group transition-colors"
+                      className="grid grid-cols-12 gap-4 px-5 py-3.5 border-b border-gray-50 dark:border-[#AED6CF]/25 last:border-0 hover:bg-[#647FBC]/10/30 dark:hover:bg-white/[0.02] group transition-colors"
                     >
                       <div className="col-span-5 flex items-center gap-3 min-w-0">
-                        <div className="w-8 h-8 rounded-lg bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10 border border-[#6FD1D7]/20 dark:border-[#5DF8D8]/20 flex items-center justify-center shrink-0">
-                          <FileText className="w-3.5 h-3.5 text-[#6FD1D7]" />
+                        <div className="w-8 h-8 rounded-lg bg-[#647FBC]/10 dark:bg-[#647FBC]/10 border border-[#91ADC8]/20 dark:border-[#647FBC]/20 flex items-center justify-center shrink-0">
+                          <FileText className="w-3.5 h-3.5 text-[#91ADC8]" />
                         </div>
                         <div className="min-w-0">
                           <p className="text-sm font-semibold text-gray-800 dark:text-white truncate">{resume.title}</p>
                           {resume.isOptimized && (
-                            <p className="text-[10px] text-[#6FD1D7] font-medium flex items-center gap-0.5">
+                            <p className="text-[10px] text-[#91ADC8] font-medium flex items-center gap-0.5">
                               <Sparkles className="w-2.5 h-2.5" /> AI Optimized
                             </p>
                           )}
@@ -416,7 +416,7 @@ export default function DashboardPage() {
                             <span className="text-sm font-bold" style={{ color: SCORE_COLOR(resume.atsScore) }}>
                               {resume.atsScore}
                             </span>
-                            <div className="w-10 h-1.5 bg-gray-100 dark:bg-[#3B7597]/20 rounded-full overflow-hidden">
+                            <div className="w-10 h-1.5 bg-gray-100 dark:bg-[#AED6CF]/20 rounded-full overflow-hidden">
                               <div
                                 className="h-full rounded-full"
                                 style={{ width: `${resume.atsScore}%`, backgroundColor: SCORE_COLOR(resume.atsScore) }}
@@ -441,7 +441,7 @@ export default function DashboardPage() {
                       <div className="col-span-1 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                         <Link
                           href={`/builder?id=${resume.id}`}
-                          className="p-1.5 rounded-lg hover:bg-[#6FD1D7]/15 dark:hover:bg-[#5DF8D8]/10 text-gray-300 dark:text-white/30 hover:text-[#6FD1D7] transition-colors"
+                          className="p-1.5 rounded-lg hover:bg-[#91ADC8]/15 dark:hover:bg-[#647FBC]/10 text-gray-300 dark:text-white/30 hover:text-[#91ADC8] transition-colors"
                         >
                           <ChevronRight className="w-3.5 h-3.5" />
                         </Link>
@@ -475,15 +475,15 @@ export default function DashboardPage() {
               className="grid grid-cols-2 gap-3"
             >
               {[
-                { label: "Total Resumes", value: resumes.length, icon: FileText, color: "text-[#6FD1D7]", bg: "bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10" },
-                { label: "Avg Score", value: avgScore, icon: BarChart3, suffix: "%", color: "text-[#3B7597]", bg: "bg-[#3B7597]/10 dark:bg-[#3B7597]/10" },
-                { label: "Best Score", value: bestScore, icon: TrendingUp, suffix: "%", color: "text-[#3B7597]", bg: "bg-[#3B7597]/10 dark:bg-[#3B7597]/10" },
+                { label: "Total Resumes", value: resumes.length, icon: FileText, color: "text-[#91ADC8]", bg: "bg-[#647FBC]/10 dark:bg-[#647FBC]/10" },
+                { label: "Avg Score", value: avgScore, icon: BarChart3, suffix: "%", color: "text-[#AED6CF]", bg: "bg-[#AED6CF]/10 dark:bg-[#AED6CF]/10" },
+                { label: "Best Score", value: bestScore, icon: TrendingUp, suffix: "%", color: "text-[#AED6CF]", bg: "bg-[#AED6CF]/10 dark:bg-[#AED6CF]/10" },
                 { label: "AI Optimized", value: optimizedCount, icon: Sparkles, color: "text-purple-500", bg: "bg-purple-50 dark:bg-purple-500/10" },
               ].map((s, i) => (
                 <motion.div
                   key={i}
                   variants={fadeUp}
-                  className="bg-white dark:bg-[#093C5D]/60 border border-gray-100 dark:border-[#3B7597]/25 rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white dark:bg-[#1e2a5e]/60 border border-gray-100 dark:border-[#AED6CF]/25 rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <motion.div
                     className={`w-8 h-8 rounded-xl ${s.bg} flex items-center justify-center mb-3`}
@@ -511,7 +511,7 @@ export default function DashboardPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, delay: 0.15 }}
-              className="bg-white dark:bg-[#093C5D]/60 border border-gray-100 dark:border-[#3B7597]/25 rounded-2xl p-5 shadow-sm"
+              className="bg-white dark:bg-[#1e2a5e]/60 border border-gray-100 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm"
             >
               <div className="flex items-center justify-between mb-1">
                 <h3 className="font-semibold text-gray-900 dark:text-white">Score Overview</h3>
@@ -519,7 +519,7 @@ export default function DashboardPage() {
               </div>
               <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
                 {isLoading ? "--" : bestScore}
-                <span className="text-sm font-normal text-[#3B7597] ml-2 text-base">
+                <span className="text-sm font-normal text-[#AED6CF] ml-2 text-base">
                   {avgScore > 0 ? `avg ${avgScore}` : ""}
                 </span>
               </p>
@@ -541,7 +541,7 @@ export default function DashboardPage() {
               )}
 
               {/* Legend */}
-              <div className="mt-3 space-y-2.5 border-t border-gray-50 dark:border-[#3B7597]/25 pt-3">
+              <div className="mt-3 space-y-2.5 border-t border-gray-50 dark:border-[#AED6CF]/25 pt-3">
                 {[
                   { label: "ATS Score", color: ORANGE, val: bestScore > 0 ? `${bestScore}` : "-" },
                   { label: "Keyword Match", color: BLUE, val: scored.length > 0 ? `${Math.round(scored.reduce((a, r) => a + ((r as any).keywordMatch || 0), 0) / scored.length)}%` : "-" },
@@ -563,7 +563,7 @@ export default function DashboardPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, delay: 0.25 }}
-              className="bg-white dark:bg-[#093C5D]/60 border border-gray-100 dark:border-[#3B7597]/25 rounded-2xl p-5 shadow-sm"
+              className="bg-white dark:bg-[#1e2a5e]/60 border border-gray-100 dark:border-[#AED6CF]/25 rounded-2xl p-5 shadow-sm"
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-semibold text-gray-900 dark:text-white">Score Distribution</h3>
@@ -584,7 +584,7 @@ export default function DashboardPage() {
                           {Math.round((d.count / scored.length) * 100)}%
                         </p>
                       </div>
-                      <div className="h-2 bg-gray-100 dark:bg-[#3B7597]/20 rounded-full overflow-hidden">
+                      <div className="h-2 bg-gray-100 dark:bg-[#AED6CF]/20 rounded-full overflow-hidden">
                         <motion.div
                           className="h-full rounded-full"
                           style={{ backgroundColor: d.color }}
@@ -600,7 +600,7 @@ export default function DashboardPage() {
 
               <Link
                 href="/history"
-                className="mt-4 w-full flex items-center justify-center py-2 border border-gray-200 dark:border-[#3B7597]/30 rounded-xl text-xs font-semibold text-gray-500 dark:text-white/40 hover:border-[#6FD1D7] dark:hover:border-[#5DF8D8]/30 hover:text-[#6FD1D7] transition-all"
+                className="mt-4 w-full flex items-center justify-center py-2 border border-gray-200 dark:border-[#AED6CF]/30 rounded-xl text-xs font-semibold text-gray-500 dark:text-white/40 hover:border-[#91ADC8] dark:hover:border-[#647FBC]/30 hover:text-[#91ADC8] transition-all"
               >
                 See All Resumes
               </Link>

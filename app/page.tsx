@@ -12,36 +12,36 @@ const features = [
     title: "AI-Powered Optimization",
     description:
       "Claude AI analyzes your JD and rewrites every bullet point with strong action verbs, natural keyword integration, and measurable impact.",
-    color: "text-[#3B7597] dark:text-[#3B7597]",
-    bg: "bg-[#3B7597]/10",
-    border: "border-[#3B7597]/20",
+    color: "text-[#AED6CF] dark:text-[#AED6CF]",
+    bg: "bg-[#AED6CF]/10",
+    border: "border-[#AED6CF]/20",
   },
   {
     icon: Target,
     title: "Real ATS Score",
     description:
       "Get a live ATS compatibility score out of 100 with keyword match %, missing keywords, and specific actionable suggestions.",
-    color: "text-[#6FD1D7] dark:text-[#5DF8D8]",
-    bg: "bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10",
-    border: "border-[#6FD1D7]/20 dark:border-[#5DF8D8]/20",
+    color: "text-[#91ADC8] dark:text-[#647FBC]",
+    bg: "bg-[#647FBC]/10 dark:bg-[#647FBC]/10",
+    border: "border-[#91ADC8]/20 dark:border-[#647FBC]/20",
   },
   {
     icon: FileDown,
     title: "One-Click PDF Export",
     description:
       "Download a pixel-perfect, ATS-safe PDF that matches the exact formatting structure of professionally crafted resumes.",
-    color: "text-[#3B7597] dark:text-[#3B7597]",
-    bg: "bg-[#3B7597]/10",
-    border: "border-[#3B7597]/20",
+    color: "text-[#AED6CF] dark:text-[#AED6CF]",
+    bg: "bg-[#AED6CF]/10",
+    border: "border-[#AED6CF]/20",
   },
   {
     icon: Zap,
     title: "JD Intelligence Engine",
     description:
       "Extracts priority keywords, required skills, tools, domain terms, and experience requirements from any job description automatically.",
-    color: "text-[#6FD1D7] dark:text-[#5DF8D8]",
-    bg: "bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10",
-    border: "border-[#6FD1D7]/20 dark:border-[#5DF8D8]/25",
+    color: "text-[#91ADC8] dark:text-[#647FBC]",
+    bg: "bg-[#647FBC]/10 dark:bg-[#647FBC]/10",
+    border: "border-[#91ADC8]/20 dark:border-[#647FBC]/25",
   },
 ];
 
@@ -65,17 +65,17 @@ export default function LandingPage() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#093C5D] text-slate-900 dark:text-white transition-colors">
+    <div className="min-h-screen bg-[#FAFDD6] dark:bg-[#1e2a5e] text-slate-900 dark:text-white transition-colors">
 
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-slate-100 dark:border-[#3B7597]/25 bg-white/90 dark:bg-[#093C5D]/80 backdrop-blur-xl">
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-slate-100 dark:border-[#AED6CF]/25 bg-white/90 dark:bg-[#1e2a5e]/80 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-[#5DF8D8] flex items-center justify-center shadow-lg shadow-[#5DF8D8]/25">
+            <div className="w-7 h-7 rounded-lg bg-[#647FBC] flex items-center justify-center shadow-lg shadow-[#647FBC]/25">
               <Zap className="w-4 h-4 text-white" />
             </div>
             <span className="font-bold text-sm tracking-tight text-slate-900 dark:text-white">
-              Resume<span className="text-[#6FD1D7]">AI</span>
+              Resume<span className="text-[#91ADC8]">AI</span>
             </span>
           </div>
           <div className="flex items-center gap-3">
@@ -92,7 +92,7 @@ export default function LandingPage() {
             </Link>
             <Link
               href="/sign-up"
-              className="px-4 py-1.5 bg-[#5DF8D8] hover:bg-[#6FD1D7] text-[#093C5D] text-sm font-semibold rounded-lg transition-all hover:scale-105 shadow-md shadow-[#5DF8D8]/25"
+              className="px-4 py-1.5 bg-[#647FBC] hover:bg-[#91ADC8] text-[#1e2a5e] text-sm font-semibold rounded-lg transition-all hover:scale-105 shadow-md shadow-[#647FBC]/25"
             >
               Get started free
             </Link>
@@ -104,7 +104,7 @@ export default function LandingPage() {
       <section className="pt-32 pb-20 px-6 relative overflow-hidden">
         {/* Background glow */}
         <div className="absolute inset-0 hero-glow pointer-events-none" />
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#6FD1D7]/10 dark:bg-[#5DF8D8]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#91ADC8]/10 dark:bg-[#647FBC]/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-4xl mx-auto text-center relative">
           <motion.div
@@ -112,13 +112,13 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10 border border-[#6FD1D7]/40 dark:border-[#5DF8D8]/20 text-[#6FD1D7] dark:text-[#5DF8D8] text-xs font-semibold mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#647FBC]/10 dark:bg-[#647FBC]/10 border border-[#91ADC8]/40 dark:border-[#647FBC]/20 text-[#91ADC8] dark:text-[#647FBC] text-xs font-semibold mb-6 shadow-sm">
               <Star className="w-3 h-3" />
               Powered by Claude AI · ATS-Safe Every Time
             </div>
             <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight mb-6 text-slate-900 dark:text-white">
               Your resume,{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5DF8D8] to-[#5DF8D8]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#647FBC] to-[#647FBC]">
                 ATS-optimized
               </span>
               <br />
@@ -131,7 +131,7 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 href="/sign-up"
-                className="flex items-center gap-2 px-7 py-3.5 bg-[#5DF8D8] hover:bg-[#6FD1D7] text-[#093C5D] font-semibold rounded-xl transition-all hover:scale-105 shadow-xl shadow-[#5DF8D8]/25"
+                className="flex items-center gap-2 px-7 py-3.5 bg-[#647FBC] hover:bg-[#91ADC8] text-[#1e2a5e] font-semibold rounded-xl transition-all hover:scale-105 shadow-xl shadow-[#647FBC]/25"
               >
                 <Sparkles className="w-4 h-4" />
                 Start optimizing for free
@@ -149,7 +149,7 @@ export default function LandingPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-12 border-y border-slate-100 dark:border-[#3B7597]/25 bg-slate-50 dark:bg-[#093C5D]/30">
+      <section className="py-12 border-y border-slate-100 dark:border-[#AED6CF]/25 bg-[#FAFDD6]/70 dark:bg-[#1e2a5e]/30">
         <div className="max-w-4xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-4 gap-8">
           {stats.map((stat, i) => (
             <motion.div
@@ -199,7 +199,7 @@ export default function LandingPage() {
       </section>
 
       {/* Features */}
-      <section className="py-20 px-6 bg-slate-50 dark:bg-[#093C5D]/30">
+      <section className="py-20 px-6 bg-[#FAFDD6]/70 dark:bg-[#1e2a5e]/30">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3 text-slate-900 dark:text-white">Everything you need to get hired</h2>
@@ -213,7 +213,7 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`p-5 bg-white dark:bg-[#3B7597]/15 border ${feature.border} rounded-2xl hover:shadow-md transition-all`}
+                className={`p-5 bg-white dark:bg-[#AED6CF]/15 border ${feature.border} rounded-2xl hover:shadow-md transition-all`}
               >
                 <div className={`w-10 h-10 rounded-xl ${feature.bg} flex items-center justify-center mb-4`}>
                   <feature.icon className={`w-5 h-5 ${feature.color}`} />
@@ -242,7 +242,7 @@ export default function LandingPage() {
               "Recruiter-readable structure preserved",
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-[#6FD1D7] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#91ADC8] shrink-0 mt-0.5" />
                 <span className="text-sm text-slate-600 dark:text-white/60">{item}</span>
               </div>
             ))}
@@ -251,9 +251,9 @@ export default function LandingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 border-t border-slate-100 dark:border-[#3B7597]/25">
+      <section className="py-20 px-6 border-t border-slate-100 dark:border-[#AED6CF]/25">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#5DF8D8]/10 dark:bg-[#5DF8D8]/10 border border-[#6FD1D7]/40 dark:border-[#5DF8D8]/20 text-[#6FD1D7] dark:text-[#5DF8D8] text-xs font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#647FBC]/10 dark:bg-[#647FBC]/10 border border-[#91ADC8]/40 dark:border-[#647FBC]/20 text-[#91ADC8] dark:text-[#647FBC] text-xs font-semibold mb-6">
             <Sparkles className="w-3 h-3" />
             Join thousands of job seekers
           </div>
@@ -263,7 +263,7 @@ export default function LandingPage() {
           </p>
           <Link
             href="/sign-up"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#5DF8D8] hover:bg-[#6FD1D7] text-[#093C5D] font-semibold rounded-xl transition-all hover:scale-105 shadow-xl shadow-[#5DF8D8]/25"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#647FBC] hover:bg-[#91ADC8] text-[#1e2a5e] font-semibold rounded-xl transition-all hover:scale-105 shadow-xl shadow-[#647FBC]/25"
           >
             <Sparkles className="w-4 h-4" />
             Get started for free
@@ -272,7 +272,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <footer className="py-8 border-t border-slate-100 dark:border-[#3B7597]/25 text-center text-xs text-slate-400 dark:text-white/20">
+      <footer className="py-8 border-t border-slate-100 dark:border-[#AED6CF]/25 text-center text-xs text-slate-400 dark:text-white/20">
         © {new Date().getFullYear()} ResumeAI. Built with Claude AI.
       </footer>
     </div>
