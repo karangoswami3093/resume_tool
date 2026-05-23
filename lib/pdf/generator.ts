@@ -185,17 +185,14 @@ function escapeHtml(str: string): string {
 }
 
 export async function generateResumePDF(resumeData: ResumeData): Promise<Buffer> {
-  const puppeteer = await import("puppeteer");
+  const chromium = await import("@sparticuz/chromium");
+  const puppeteer = await import("puppeteer-core");
   const html = generateResumeHTML(resumeData);
 
   const browser = await puppeteer.default.launch({
+    args: chromium.default.args,
+    executablePath: await chromium.default.executablePath(),
     headless: true,
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage",
-      "--disable-gpu",
-    ],
   });
 
   try {
